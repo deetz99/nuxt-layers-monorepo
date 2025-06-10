@@ -6,6 +6,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "ci:publish": "pnpm -r publish --access public"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.29.4"
   }
