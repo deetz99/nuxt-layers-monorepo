@@ -4,4 +4,3 @@ import config from '../../eslint-defaults.js'
 export default withNuxt({
   ...config
 })
-

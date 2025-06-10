@@ -1,5 +1,5 @@
 {
-  "name": "my-nuxt-layer",
+  "name": "@dwol/monorepo-layer-auth",
   "type": "module",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
@@ -9,7 +9,8 @@
     "build": "nuxt build .playground",
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "ci:publish": "pnpm publish -r --access public"
   },
   "devDependencies": {
     "nuxt": "catalog:",
