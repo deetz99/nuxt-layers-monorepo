@@ -4,7 +4,7 @@ const { myLayer } = useAppConfig()
 
 <template>
   <div>
-    <h1>Hello World! Changed Again Again Again!</h1>
+    <h1>Hello World! Changed Again Again Again Again!</h1>
     <pre>{{ myLayer }}</pre>
   </div>
 </template>
