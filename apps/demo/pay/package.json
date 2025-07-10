@@ -23,7 +23,7 @@
     "nuxt": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:",
-    "@dwol/pay-layer": "^0.0.2"
+    "@dwol/pay-layer": "^0.0.1"
   },
   "devDependencies": {
     "typescript": "catalog:",
