@@ -1,3 +1,4 @@
 <template>
   <HelloWorld />
+  Test
 </template>
