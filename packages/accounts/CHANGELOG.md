@@ -1,5 +1,11 @@
 # @dwol/accounts-layer
 
+## 0.0.3
+
+### Patch Changes
+
+- [#26](https://github.com/deetz99/nuxt-layers-monorepo/pull/26) [`d7005e2`](https://github.com/deetz99/nuxt-layers-monorepo/commit/d7005e29f163d9573c6eec099eab187dbd90feba) Thanks [@deetz99](https://github.com/deetz99)! - Extend base layer in accounts layer
+
 ## 0.0.2
 
 ### Patch Changes
