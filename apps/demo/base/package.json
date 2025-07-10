@@ -2,7 +2,7 @@
   "name": "base-layer-demo-app",
   "private": true,
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build-check": "nuxt build",
@@ -23,7 +23,7 @@
     "nuxt": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:",
-    "@dwol/base-layer": "^0.0.1"
+    "@dwol/base-layer": "^0.0.2"
   },
   "devDependencies": {
     "typescript": "catalog:",

@@ -2,7 +2,7 @@
   "name": "forms-layer-demo-app",
   "private": true,
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build-check": "nuxt build",
@@ -23,7 +23,7 @@
     "nuxt": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:",
-    "@dwol/forms-layer": "^0.0.1"
+    "@dwol/forms-layer": "^0.0.2"
   },
   "devDependencies": {
     "typescript": "catalog:",

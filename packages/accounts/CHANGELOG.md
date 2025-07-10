@@ -1,5 +1,11 @@
 # @dwol/accounts-layer
 
+## 0.0.2
+
+### Patch Changes
+
+- [#22](https://github.com/deetz99/nuxt-layers-monorepo/pull/22) [`03c49e2`](https://github.com/deetz99/nuxt-layers-monorepo/commit/03c49e26d8ab3dbd3b5665d1854d3e1d6e98bf5a) Thanks [@deetz99](https://github.com/deetz99)! - Update all layers to use Nuxt v4 RC
+
 ## 0.0.1
 
 ### Patch Changes
