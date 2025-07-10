@@ -10,5 +10,10 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": [
+    "accounts-layer-demo-app",
+    "base-layer-demo-app",
+    "forms-layer-demo-app",
+    "pay-layer-demo-app"
+  ]
 }
