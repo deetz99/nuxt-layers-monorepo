@@ -1,0 +1,33 @@
+{
+  "name": "@dwol/forms-layer",
+  "type": "module",
+  "version": "0.0.0",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "dev": "nuxi dev .playground",
+    "dev:prepare": "nuxt prepare .playground",
+    "build": "nuxt build .playground",
+    "generate": "nuxt generate .playground",
+    "preview": "nuxt preview .playground",
+    "lint": "eslint .",
+    "ci:publish": "pnpm publish -r --access public"
+  },
+  "devDependencies": {
+    "nuxt": "catalog:",
+    "typescript": "catalog:",
+    "vue": "catalog:",
+    "@nuxtjs/i18n": "catalog:",
+    "eslint": "catalog:",
+    "@nuxt/eslint": "catalog:",
+    "@playwright/test": "catalog:",
+    "@axe-core/playwright": "catalog:",
+    "@faker-js/faker": "catalog:",
+    "@nuxt/test-utils": "catalog:",
+    "vitest": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "happy-dom": "catalog:",
+    "otpauth": "catalog:",
+    "@testing-library/vue": "catalog:",
+    "@vue/test-utils": "catalog:"
+  }
+}
