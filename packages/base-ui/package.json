@@ -1,7 +1,7 @@
 {
-  "name": "@dwol/monorepo-layer-base",
+  "name": "@dwol/base-layer",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.0",
   "main": "./nuxt.config.ts",
   "scripts": {
     "dev": "nuxi dev .playground",
