@@ -7,4 +7,4 @@
 
 - resolves #13 rename base/accounts and reset versions
 - resolves #14 add forms/pay layer shells
-- fix lockfile
+- fix lockfile rename base/accounts and reset versions
