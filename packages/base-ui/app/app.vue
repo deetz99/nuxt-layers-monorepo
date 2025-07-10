@@ -1,4 +1,4 @@
 <template>
   <HelloWorld />
-  Test
+  Test New Text
 </template>
