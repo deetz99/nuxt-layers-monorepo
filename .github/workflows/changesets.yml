@@ -9,7 +9,7 @@ env:
   CI: true
 
 jobs:
-  version:
+  version-or-publish:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions:
@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       
-      - name: Create and publish versions
+      - name: Version or publish packages
         uses: changesets/action@v1
         with:
           commit: "chore: update versions"
