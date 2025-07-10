@@ -1,7 +1,7 @@
 {
   "name": "@dwol/forms-layer",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./nuxt.config.ts",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
