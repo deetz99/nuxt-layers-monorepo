@@ -14,21 +14,24 @@
     "ci:publish": "pnpm publish -r --access public"
   },
   "devDependencies": {
-    "nuxt": "catalog:",
-    "typescript": "catalog:",
-    "vue": "catalog:",
-    "@nuxtjs/i18n": "catalog:",
-    "eslint": "catalog:",
-    "@nuxt/eslint": "catalog:",
-    "@playwright/test": "catalog:",
     "@axe-core/playwright": "catalog:",
     "@faker-js/faker": "catalog:",
+    "@nuxt/eslint": "catalog:",
     "@nuxt/test-utils": "catalog:",
-    "vitest": "catalog:",
-    "@vitest/coverage-v8": "catalog:",
-    "happy-dom": "catalog:",
-    "otpauth": "catalog:",
+    "@nuxtjs/i18n": "catalog:",
+    "@playwright/test": "catalog:",
     "@testing-library/vue": "catalog:",
-    "@vue/test-utils": "catalog:"
+    "@vitest/coverage-v8": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "eslint": "catalog:",
+    "happy-dom": "catalog:",
+    "nuxt": "catalog:",
+    "otpauth": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vue": "catalog:"
+  },
+  "dependencies": {
+    "@dwol/base-layer": "workspace:*"
   }
 }
