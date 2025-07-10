@@ -53,7 +53,7 @@ catalogs:
       version: 3.2.3
     vue:
       specifier: latest
-      version: 3.5.17
+      version: 3.5.16
     vue-router:
       specifier: ^4.5.1
       version: 4.5.1
@@ -69,9 +69,183 @@ importers:
         specifier: ^2.29.4
         version: 2.29.4
 
+  apps/demo/accounts:
+    dependencies:
+      '@dwol/accounts-layer':
+        specifier: ^0.0.1
+        version: 0.0.1
+      nuxt:
+        specifier: 'catalog:'
+        version: 3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.0)(db0@0.3.2)(eslint@9.28.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.42.0)(terser@5.42.0)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.17(typescript@5.8.3)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.17(typescript@5.8.3))
+    devDependencies:
+      '@axe-core/playwright':
+        specifier: 'catalog:'
+        version: 4.10.2(playwright-core@1.53.0)
+      '@faker-js/faker':
+        specifier: 'catalog:'
+        version: 9.8.0
+      '@nuxt/eslint':
+        specifier: 'catalog:'
+        version: 1.4.1(@typescript-eslint/utils@8.34.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.17)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))
+      '@nuxt/test-utils':
+        specifier: 'catalog:'
+        version: 3.19.1(@playwright/test@1.53.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.17)(vue@3.5.17(typescript@5.8.3)))(@types/node@24.0.0)(@vue/test-utils@2.4.6)(happy-dom@17.6.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.53.0)(terser@5.42.0)(typescript@5.8.3)(vitest@3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
+      '@nuxtjs/i18n':
+        specifier: 'catalog:'
+        version: 9.5.5(@vue/compiler-dom@3.5.17)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(rollup@4.42.0)(vue@3.5.17(typescript@5.8.3))
+      '@playwright/test':
+        specifier: 'catalog:'
+        version: 1.53.0
+      '@testing-library/vue':
+        specifier: 'catalog:'
+        version: 8.1.0(@vue/compiler-sfc@3.5.17)(vue@3.5.17(typescript@5.8.3))
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 3.2.3(vitest@3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))
+      '@vue/test-utils':
+        specifier: 'catalog:'
+        version: 2.4.6
+      eslint:
+        specifier: 'catalog:'
+        version: 9.28.0(jiti@2.4.2)
+      happy-dom:
+        specifier: 'catalog:'
+        version: 17.6.3
+      otpauth:
+        specifier: 'catalog:'
+        version: 9.4.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
+      vitest:
+        specifier: 'catalog:'
+        version: 3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0)
+
   apps/demo/base:
     dependencies:
       '@dwol/base-layer':
+        specifier: ^0.0.1
+        version: 0.0.1
+      nuxt:
+        specifier: 'catalog:'
+        version: 3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.0)(db0@0.3.2)(eslint@9.28.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.42.0)(terser@5.42.0)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.17(typescript@5.8.3)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.17(typescript@5.8.3))
+    devDependencies:
+      '@axe-core/playwright':
+        specifier: 'catalog:'
+        version: 4.10.2(playwright-core@1.53.0)
+      '@faker-js/faker':
+        specifier: 'catalog:'
+        version: 9.8.0
+      '@nuxt/eslint':
+        specifier: 'catalog:'
+        version: 1.4.1(@typescript-eslint/utils@8.34.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.17)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))
+      '@nuxt/test-utils':
+        specifier: 'catalog:'
+        version: 3.19.1(@playwright/test@1.53.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.17)(vue@3.5.17(typescript@5.8.3)))(@types/node@24.0.0)(@vue/test-utils@2.4.6)(happy-dom@17.6.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.53.0)(terser@5.42.0)(typescript@5.8.3)(vitest@3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
+      '@nuxtjs/i18n':
+        specifier: 'catalog:'
+        version: 9.5.5(@vue/compiler-dom@3.5.17)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(rollup@4.42.0)(vue@3.5.17(typescript@5.8.3))
+      '@playwright/test':
+        specifier: 'catalog:'
+        version: 1.53.0
+      '@testing-library/vue':
+        specifier: 'catalog:'
+        version: 8.1.0(@vue/compiler-sfc@3.5.17)(vue@3.5.17(typescript@5.8.3))
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 3.2.3(vitest@3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))
+      '@vue/test-utils':
+        specifier: 'catalog:'
+        version: 2.4.6
+      eslint:
+        specifier: 'catalog:'
+        version: 9.28.0(jiti@2.4.2)
+      happy-dom:
+        specifier: 'catalog:'
+        version: 17.6.3
+      otpauth:
+        specifier: 'catalog:'
+        version: 9.4.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
+      vitest:
+        specifier: 'catalog:'
+        version: 3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0)
+
+  apps/demo/forms:
+    dependencies:
+      '@dwol/forms-layer':
+        specifier: ^0.0.1
+        version: 0.0.1
+      nuxt:
+        specifier: 'catalog:'
+        version: 3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.0)(db0@0.3.2)(eslint@9.28.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.42.0)(terser@5.42.0)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
+      vue:
+        specifier: 'catalog:'
+        version: 3.5.17(typescript@5.8.3)
+      vue-router:
+        specifier: 'catalog:'
+        version: 4.5.1(vue@3.5.17(typescript@5.8.3))
+    devDependencies:
+      '@axe-core/playwright':
+        specifier: 'catalog:'
+        version: 4.10.2(playwright-core@1.53.0)
+      '@faker-js/faker':
+        specifier: 'catalog:'
+        version: 9.8.0
+      '@nuxt/eslint':
+        specifier: 'catalog:'
+        version: 1.4.1(@typescript-eslint/utils@8.34.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.17)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.0)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))
+      '@nuxt/test-utils':
+        specifier: 'catalog:'
+        version: 3.19.1(@playwright/test@1.53.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.17)(vue@3.5.17(typescript@5.8.3)))(@types/node@24.0.0)(@vue/test-utils@2.4.6)(happy-dom@17.6.3)(jiti@2.4.2)(magicast@0.3.5)(playwright-core@1.53.0)(terser@5.42.0)(typescript@5.8.3)(vitest@3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
+      '@nuxtjs/i18n':
+        specifier: 'catalog:'
+        version: 9.5.5(@vue/compiler-dom@3.5.17)(eslint@9.28.0(jiti@2.4.2))(magicast@0.3.5)(rollup@4.42.0)(vue@3.5.17(typescript@5.8.3))
+      '@playwright/test':
+        specifier: 'catalog:'
+        version: 1.53.0
+      '@testing-library/vue':
+        specifier: 'catalog:'
+        version: 8.1.0(@vue/compiler-sfc@3.5.17)(vue@3.5.17(typescript@5.8.3))
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 3.2.3(vitest@3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0))
+      '@vue/test-utils':
+        specifier: 'catalog:'
+        version: 2.4.6
+      eslint:
+        specifier: 'catalog:'
+        version: 9.28.0(jiti@2.4.2)
+      happy-dom:
+        specifier: 'catalog:'
+        version: 17.6.3
+      otpauth:
+        specifier: 'catalog:'
+        version: 9.4.0
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
+      vitest:
+        specifier: 'catalog:'
+        version: 3.2.3(@types/node@24.0.0)(happy-dom@17.6.3)(jiti@2.4.2)(terser@5.42.0)(yaml@2.8.0)
+
+  apps/demo/pay:
+    dependencies:
+      '@dwol/pay-layer':
         specifier: ^0.0.1
         version: 0.0.1
       nuxt:
@@ -552,8 +726,17 @@ packages:
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
 
+  '@dwol/accounts-layer@0.0.1':
+    resolution: {integrity: sha512-UOp8NLyknvZJnsu1CbUzfrFbskuZynln01qvE24Iy42AX5DLj6UoulHCYOp5OHc/dH9TiyNNSAxj7PKI/9rCIA==}
+
   '@dwol/base-layer@0.0.1':
     resolution: {integrity: sha512-+sn0fzIU0lX8QxIcoeFOEVmGQ9j74ks1F7llQgaKhxBSitm9fSNfEbI7WwVii0exLdc+5cG/3YI//DMyIJ6/KQ==}
+
+  '@dwol/forms-layer@0.0.1':
+    resolution: {integrity: sha512-dfXt+K4FyglD5keJT6Uod76Wq3ItLug/8vybYz9BIQm2kkCgds1czPiyZ9iA9v7HlFqazW2iVok3RTEyAu4HqQ==}
+
+  '@dwol/pay-layer@0.0.1':
+    resolution: {integrity: sha512-fLiuuLFIpnqvvU2bGiLoLzhz9nuFeMKjJ84cZtw0w1JisUPtP5UqA5ogzw/cWcxUA7FckrwoOzQgyCkvxw4dxA==}
 
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
@@ -5818,7 +6001,13 @@ snapshots:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
 
+  '@dwol/accounts-layer@0.0.1': {}
+
   '@dwol/base-layer@0.0.1': {}
+
+  '@dwol/forms-layer@0.0.1': {}
+
+  '@dwol/pay-layer@0.0.1': {}
 
   '@emnapi/core@1.4.3':
     dependencies:
