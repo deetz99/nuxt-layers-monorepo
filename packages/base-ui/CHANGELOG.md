@@ -1,5 +1,13 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.5
+
+### Patch Changes
+
+- [#10](https://github.com/deetz99/nuxt-layers-monorepo/pull/10) [`aac201d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/aac201dd05db617c1e024ee2e46a0ee17d9f7489) Thanks [@deetz99](https://github.com/deetz99)! - Updated app.vue text
+
+- [#10](https://github.com/deetz99/nuxt-layers-monorepo/pull/10) [`aac201d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/aac201dd05db617c1e024ee2e46a0ee17d9f7489) Thanks [@deetz99](https://github.com/deetz99)! - Change text in app.vue
+
 ## 0.0.4
 
 ### Patch Changes
