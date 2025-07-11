@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.3
+
+### Patch Changes
+
+- [#28](https://github.com/deetz99/nuxt-layers-monorepo/pull/28) [`4820916`](https://github.com/deetz99/nuxt-layers-monorepo/commit/48209161552af3dd0b6e2ed8c401c8df555b62aa) Thanks [@kialj876](https://github.com/kialj876)! - Added local module for assets in base-ui
+
 ## 0.0.2
 
 ### Patch Changes
