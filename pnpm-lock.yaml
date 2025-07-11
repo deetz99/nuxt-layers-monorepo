@@ -75,8 +75,8 @@ importers:
   apps/demo/accounts:
     dependencies:
       '@dwol/accounts-layer':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: workspace:*
+        version: link:../../../packages/accounts
       nuxt:
         specifier: 'catalog:'
         version: 4.0.0-rc.0(@parcel/watcher@2.5.1)(@types/node@24.0.0)(@vue/compiler-sfc@3.5.17)(db0@0.3.2)(eslint@9.28.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.2)(terser@5.42.0)(typescript@5.8.3)(vite@7.0.4(@types/node@24.0.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
@@ -133,8 +133,8 @@ importers:
   apps/demo/base:
     dependencies:
       '@dwol/base-layer':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: workspace:*
+        version: link:../../../packages/base-ui
       nuxt:
         specifier: 'catalog:'
         version: 4.0.0-rc.0(@parcel/watcher@2.5.1)(@types/node@24.0.0)(@vue/compiler-sfc@3.5.17)(db0@0.3.2)(eslint@9.28.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.2)(terser@5.42.0)(typescript@5.8.3)(vite@7.0.4(@types/node@24.0.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
@@ -191,8 +191,8 @@ importers:
   apps/demo/forms:
     dependencies:
       '@dwol/forms-layer':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: workspace:*
+        version: link:../../../packages/forms
       nuxt:
         specifier: 'catalog:'
         version: 4.0.0-rc.0(@parcel/watcher@2.5.1)(@types/node@24.0.0)(@vue/compiler-sfc@3.5.17)(db0@0.3.2)(eslint@9.28.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.2)(terser@5.42.0)(typescript@5.8.3)(vite@7.0.4(@types/node@24.0.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
@@ -249,8 +249,8 @@ importers:
   apps/demo/pay:
     dependencies:
       '@dwol/pay-layer':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: workspace:*
+        version: link:../../../packages/pay
       nuxt:
         specifier: 'catalog:'
         version: 4.0.0-rc.0(@parcel/watcher@2.5.1)(@types/node@24.0.0)(@vue/compiler-sfc@3.5.17)(db0@0.3.2)(eslint@9.28.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.2)(terser@5.42.0)(typescript@5.8.3)(vite@7.0.4(@types/node@24.0.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.42.0)(yaml@2.8.0))(yaml@2.8.0)
@@ -778,18 +778,6 @@ packages:
   '@dependents/detective-less@5.0.1':
     resolution: {integrity: sha512-Y6+WUMsTFWE5jb20IFP4YGa5IrGY/+a/FbOSjDF/wz9gepU2hwCYSXRHP/vPwBvwcY3SVMASt4yXxbXNXigmZQ==}
     engines: {node: '>=18'}
-
-  '@dwol/accounts-layer@0.0.1':
-    resolution: {integrity: sha512-UOp8NLyknvZJnsu1CbUzfrFbskuZynln01qvE24Iy42AX5DLj6UoulHCYOp5OHc/dH9TiyNNSAxj7PKI/9rCIA==}
-
-  '@dwol/base-layer@0.0.1':
-    resolution: {integrity: sha512-+sn0fzIU0lX8QxIcoeFOEVmGQ9j74ks1F7llQgaKhxBSitm9fSNfEbI7WwVii0exLdc+5cG/3YI//DMyIJ6/KQ==}
-
-  '@dwol/forms-layer@0.0.1':
-    resolution: {integrity: sha512-dfXt+K4FyglD5keJT6Uod76Wq3ItLug/8vybYz9BIQm2kkCgds1czPiyZ9iA9v7HlFqazW2iVok3RTEyAu4HqQ==}
-
-  '@dwol/pay-layer@0.0.1':
-    resolution: {integrity: sha512-fLiuuLFIpnqvvU2bGiLoLzhz9nuFeMKjJ84cZtw0w1JisUPtP5UqA5ogzw/cWcxUA7FckrwoOzQgyCkvxw4dxA==}
 
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
@@ -7008,14 +6996,6 @@ snapshots:
     dependencies:
       gonzales-pe: 4.3.0
       node-source-walk: 7.0.1
-
-  '@dwol/accounts-layer@0.0.1': {}
-
-  '@dwol/base-layer@0.0.1': {}
-
-  '@dwol/forms-layer@0.0.1': {}
-
-  '@dwol/pay-layer@0.0.1': {}
 
   '@emnapi/core@1.4.3':
     dependencies:
