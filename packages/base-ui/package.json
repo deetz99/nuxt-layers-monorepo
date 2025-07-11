@@ -16,7 +16,7 @@
     "ci:publish": "pnpm publish -r --access public"
   },
   "dependencies": {
-    "@nuxt/ui": "catalog:"
+    "@nuxt/ui": "^3.2.0"
   },
   "devDependencies": {
     "nuxt": "catalog:",
