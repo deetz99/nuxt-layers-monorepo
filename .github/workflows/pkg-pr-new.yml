@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout code repository
       uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Determine changes in packages
       uses: dorny/paths-filter@v3
