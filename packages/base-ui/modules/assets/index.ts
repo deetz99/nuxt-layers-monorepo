@@ -1,12 +1,14 @@
 import { defineNuxtModule, createResolver, installModule } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
-export interface ModuleOptions {}
+export interface ModuleOptions {
+  someconfig: boolean
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'assets',
-    configKey: 'assets',
+    configKey: 'assets'
   },
   // Default configuration options of the Nuxt module
   defaults: {},
@@ -17,5 +19,5 @@ export default defineNuxtModule<ModuleOptions>({
     _nuxt.options.css.push(resolver.resolve('./runtime/assets/core-main.css'))
     _nuxt.options.css.push(resolver.resolve('./runtime/assets/core-layout.css'))
     await installModule('@nuxt/ui')
-  },
+  }
 })
