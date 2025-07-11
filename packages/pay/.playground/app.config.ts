@@ -1,5 +1,5 @@
 export default defineAppConfig({
   myLayer: {
-    name: 'My amazing Nuxt layer (overwritten)'
+    name: 'Hello from **PAY** layer playground'
   }
 })
