@@ -408,6 +408,10 @@ importers:
         version: 3.5.17(typescript@5.8.3)
 
   packages/forms:
+    dependencies:
+      '@dwol/base-layer':
+        specifier: workspace:*
+        version: link:../base-ui
     devDependencies:
       '@axe-core/playwright':
         specifier: 'catalog:'
@@ -459,6 +463,10 @@ importers:
         version: 3.5.17(typescript@5.8.3)
 
   packages/pay:
+    dependencies:
+      '@dwol/accounts-layer':
+        specifier: workspace:*
+        version: link:../accounts
     devDependencies:
       '@axe-core/playwright':
         specifier: 'catalog:'
