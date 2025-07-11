@@ -1,5 +1,14 @@
 # @dwol/accounts-layer
 
+## 0.0.7
+
+### Patch Changes
+
+- [#35](https://github.com/deetz99/nuxt-layers-monorepo/pull/35) [`dd1bc9b`](https://github.com/deetz99/nuxt-layers-monorepo/commit/dd1bc9b7a72d577de407f80c783c9129b8dcd3a5) Thanks [@deetz99](https://github.com/deetz99)! - Remove overrides in parent layers for testing
+
+  - remove HelloWorld component in accounts, forms and pay to view base layer component
+  - remove layer app.config in parent layers and update playground app.config text
+
 ## 0.0.6
 
 ### Patch Changes
