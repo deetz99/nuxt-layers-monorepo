@@ -12,6 +12,7 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "ci:publish": "pnpm publish -r --access public"
   },
   "dependencies": {
@@ -22,8 +23,6 @@
     "typescript": "catalog:",
     "vue": "catalog:",
     "@nuxtjs/i18n": "catalog:",
-    "eslint": "catalog:",
-    "@nuxt/eslint": "catalog:",
     "@playwright/test": "catalog:",
     "@axe-core/playwright": "catalog:",
     "@faker-js/faker": "catalog:",
