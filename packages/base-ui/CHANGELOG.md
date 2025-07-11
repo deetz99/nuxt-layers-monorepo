@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.8
+
+### Patch Changes
+
+- [#45](https://github.com/deetz99/nuxt-layers-monorepo/pull/45) [`c671126`](https://github.com/deetz99/nuxt-layers-monorepo/commit/c671126186a281ae1d335417265c8e3a98cc2a5d) Thanks [@deetz99](https://github.com/deetz99)! - Edit text to test pkg-pr-new
+
 ## 0.0.7
 
 ### Patch Changes
