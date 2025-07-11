@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.5
+
+### Patch Changes
+
+- [#33](https://github.com/deetz99/nuxt-layers-monorepo/pull/33) [`aca5dc1`](https://github.com/deetz99/nuxt-layers-monorepo/commit/aca5dc1c647e569feecaade46d6fde6ca665693a) Thanks [@kialj876](https://github.com/kialj876)! - Move nuxt/ui to base layer deps
+
 ## 0.0.4
 
 ### Patch Changes
