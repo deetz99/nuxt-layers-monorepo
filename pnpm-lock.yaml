@@ -463,6 +463,10 @@ importers:
         version: 3.5.17(typescript@5.8.3)
 
   packages/pay:
+    dependencies:
+      '@dwol/accounts-layer':
+        specifier: workspace:*
+        version: link:../accounts
     devDependencies:
       '@axe-core/playwright':
         specifier: 'catalog:'
