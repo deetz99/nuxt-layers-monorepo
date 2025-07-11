@@ -1,6 +1,6 @@
 export default defineAppConfig({
   myLayer: {
-    name: 'Hello from Nuxt layer TESTING PKG PR NEW'
+    name: 'Hello from Nuxt layer TESTING PKG PR NEW AGAIN'
   }
 })
 
