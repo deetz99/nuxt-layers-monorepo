@@ -1,5 +1,11 @@
 # pay-layer-demo-app
 
+## 0.0.3
+
+### Patch Changes
+
+- [#37](https://github.com/deetz99/nuxt-layers-monorepo/pull/37) [`0aa9823`](https://github.com/deetz99/nuxt-layers-monorepo/commit/0aa9823cdd3fc64dedd3f97f7c1a2430fc47a698) Thanks [@deetz99](https://github.com/deetz99)! - Add workspace ref for layer dependencies
+
 ## 0.0.2
 
 ### Patch Changes
