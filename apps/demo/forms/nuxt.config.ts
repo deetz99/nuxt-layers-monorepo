@@ -3,8 +3,6 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2025-05-15',
   devtools: { enabled: false },
-  modules: [
-    '@nuxt/eslint'
-  ],
+  modules: [],
   extends: ['@dwol/forms-layer']
 })
