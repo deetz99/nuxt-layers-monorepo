@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.6
+
+### Patch Changes
+
+- [#39](https://github.com/deetz99/nuxt-layers-monorepo/pull/39) [`f14a76c`](https://github.com/deetz99/nuxt-layers-monorepo/commit/f14a76cfc3a01dfe61853674861b934fb84b47bb) Thanks [@kialj876](https://github.com/kialj876)! - Base layer: favicon, fonts, images
+
 ## 0.0.5
 
 ### Patch Changes
