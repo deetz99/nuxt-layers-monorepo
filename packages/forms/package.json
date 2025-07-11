@@ -30,5 +30,8 @@
     "otpauth": "catalog:",
     "@testing-library/vue": "catalog:",
     "@vue/test-utils": "catalog:"
+  },
+  "dependencies": {
+    "@dwol/base-layer": "workspace:*"
   }
 }
