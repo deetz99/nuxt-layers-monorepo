@@ -1,5 +1,16 @@
 # accounts-layer-demo-app
 
+## 0.0.5
+
+### Patch Changes
+
+- [#41](https://github.com/deetz99/nuxt-layers-monorepo/pull/41) [`51a8662`](https://github.com/deetz99/nuxt-layers-monorepo/commit/51a866279374fa834309f1d7f1cf21283325015e) Thanks [@deetz99](https://github.com/deetz99)! - Fix common lint config
+
+- [#42](https://github.com/deetz99/nuxt-layers-monorepo/pull/42) [`5cc96b8`](https://github.com/deetz99/nuxt-layers-monorepo/commit/5cc96b8dfabb8a334b0509cf99fe0689ae63abfb) Thanks [@deetz99](https://github.com/deetz99)! - Fix nuxt config in accounts demo app
+
+- Updated dependencies [[`51a8662`](https://github.com/deetz99/nuxt-layers-monorepo/commit/51a866279374fa834309f1d7f1cf21283325015e)]:
+  - @dwol/accounts-layer@0.0.9
+
 ## 0.0.4
 
 ### Patch Changes
