@@ -14,6 +14,9 @@
     "lint": "eslint .",
     "ci:publish": "pnpm publish -r --access public"
   },
+  "dependencies": {
+    "@nuxt/ui": "catalog:"
+  },
   "devDependencies": {
     "nuxt": "catalog:",
     "typescript": "catalog:",
@@ -30,7 +33,6 @@
     "happy-dom": "catalog:",
     "otpauth": "catalog:",
     "@testing-library/vue": "catalog:",
-    "@vue/test-utils": "catalog:",
-    "@nuxt/ui": "catalog:"
+    "@vue/test-utils": "catalog:"
   }
 }
