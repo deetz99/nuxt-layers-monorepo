@@ -20,4 +20,3 @@ catalog:
   otpauth: ^9.4.0
   '@testing-library/vue': ^8.1.0
   '@vue/test-utils': ^2.4.6
-  '@nuxt/ui': ^3.2.0
