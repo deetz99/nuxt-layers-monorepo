@@ -1,5 +1,17 @@
 # @dwol/forms-layer
 
+## 0.0.3
+
+### Patch Changes
+
+- [#30](https://github.com/deetz99/nuxt-layers-monorepo/pull/30) [`ffac367`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ffac3671c500fbc74019d1388fdc2dffdc6ed0b5) Thanks [@deetz99](https://github.com/deetz99)! - Add extends property and layer dependency
+
+  - extend base in forms layer
+  - extend accounts in pay layer
+
+- Updated dependencies [[`eb62670`](https://github.com/deetz99/nuxt-layers-monorepo/commit/eb6267026a52da70ff1797d40f43b5cee904583e)]:
+  - @dwol/base-layer@0.0.4
+
 ## 0.0.2
 
 ### Patch Changes

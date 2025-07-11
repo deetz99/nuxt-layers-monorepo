@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.4
+
+### Patch Changes
+
+- [#31](https://github.com/deetz99/nuxt-layers-monorepo/pull/31) [`eb62670`](https://github.com/deetz99/nuxt-layers-monorepo/commit/eb6267026a52da70ff1797d40f43b5cee904583e) Thanks [@kialj876](https://github.com/kialj876)! - fixed assets module in base
+
 ## 0.0.3
 
 ### Patch Changes
