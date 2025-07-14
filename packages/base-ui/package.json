@@ -16,7 +16,7 @@
     "lint:fix": "eslint --fix .",
     "test": "pnpm run test:unit; pnpm run test:e2e",
     "test:unit": "vitest run",
-    "test:e2e": "npx playwright test",
+    "test:e2e": "npx playwright test --debug",
     "ci:publish": "pnpm publish -r --access public"
   },
   "dependencies": {
