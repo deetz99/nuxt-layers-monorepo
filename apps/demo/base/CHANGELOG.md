@@ -1,5 +1,12 @@
 # base-layer-demo-app
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [[`256994b`](https://github.com/deetz99/nuxt-layers-monorepo/commit/256994bedbdbad856e584e9d01cd44c2a610b163)]:
+  - @dwol/base-layer@0.0.9
+
 ## 0.0.7
 
 ### Patch Changes
