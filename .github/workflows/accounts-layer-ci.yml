@@ -10,7 +10,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./packages/accounts
+    working-directory: ./
 jobs:
   accounts-layer-sre-ci:
     uses: bcgov/bcregistry-sre/.github/workflows/frontend-ci.yaml@main
@@ -18,5 +18,5 @@ jobs:
       node_version: 24
       pnpm_version: 10
       app_name: "test-accounts-layer"
-      working_directory: ./packages/accounts
+      working_directory: ./
       codecov_flag: "test-accounts-layer"

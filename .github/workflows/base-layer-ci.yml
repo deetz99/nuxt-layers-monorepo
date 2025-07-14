@@ -3,7 +3,7 @@ name: Base Layer CI
 on:
   pull_request:
     paths:
-      - "packages/base-ui/**"
+      - "suspend/packages/base-ui/**"
   workflow_dispatch:
 
 defaults:

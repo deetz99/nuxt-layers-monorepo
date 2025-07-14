@@ -13,7 +13,7 @@ export default defineConfig<ConfigOptions>({
   use: {
     nuxt: {
       rootDir: resolve('./'),
-      runner: 'vitest',
+      runner: 'vitest'
     },
     actionTimeout: 2000,
     baseURL: process.env.NUXT_BASE_URL,
@@ -27,6 +27,6 @@ export default defineConfig<ConfigOptions>({
     command: 'pnpm run dev',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.GITHUB_RUN_ID,
-    timeout: 3000,
-  },
+    timeout: 3000
+  }
 })
