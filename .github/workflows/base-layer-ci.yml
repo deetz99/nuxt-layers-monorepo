@@ -9,7 +9,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./packages/base-ui
+    working_directory: ./packages/base-ui
 jobs:
   base-layer-sre-ci:
     uses: bcgov/bcregistry-sre/.github/workflows/frontend-ci.yaml@main
@@ -17,5 +17,5 @@ jobs:
       node_version: 24
       pnpm_version: 10
       app_name: "test"
-      working-directory: ./packages/base-ui
+      working_directory: ./packages/base-ui
       codecov_flag: "test"
