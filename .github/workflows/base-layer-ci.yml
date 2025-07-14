@@ -6,7 +6,18 @@ on:
       - "packages/base-ui/**"
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
+  setup-job:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: "true"
+
   base-layer-e2e-test:
     needs: setup-job
     runs-on: ubuntu-24.04
