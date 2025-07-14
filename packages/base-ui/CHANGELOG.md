@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.11-beta.1
+
+### Patch Changes
+
+- Update text
+
 ## 0.0.11-beta.0
 
 ### Patch Changes

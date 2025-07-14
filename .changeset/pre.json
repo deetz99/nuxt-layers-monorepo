@@ -12,6 +12,7 @@
     "@dwol/pay-layer": "0.0.10"
   },
   "changesets": [
+    "khaki-parrots-cross",
     "six-poems-create",
     "slick-eels-sort"
   ]

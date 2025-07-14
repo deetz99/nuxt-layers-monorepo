@@ -1,5 +1,12 @@
 # @dwol/accounts-layer
 
+## 0.0.13-beta.2
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @dwol/base-layer@0.0.11-beta.1
+
 ## 0.0.13-beta.1
 
 ### Patch Changes
