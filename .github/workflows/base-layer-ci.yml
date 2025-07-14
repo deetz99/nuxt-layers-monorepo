@@ -51,6 +51,9 @@ jobs:
       - name: prepare
         run: pnpm dev:prepare
 
+      - name: prepare
+        run: pnpm dev
+
       - name: Run Playwright tests
         run: pnpm test:e2e
     
