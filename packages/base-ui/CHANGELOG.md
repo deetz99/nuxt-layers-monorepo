@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.9
+
+### Patch Changes
+
+- [#50](https://github.com/deetz99/nuxt-layers-monorepo/pull/50) [`92606d3`](https://github.com/deetz99/nuxt-layers-monorepo/commit/92606d315cc6dbcb99d1c12e039c09415f687e93) Thanks [@deetz99](https://github.com/deetz99)! - Updated text in HelloWorld component
+
 ## 0.0.8
 
 ### Patch Changes

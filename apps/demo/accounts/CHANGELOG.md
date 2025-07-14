@@ -1,5 +1,12 @@
 # accounts-layer-demo-app
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @dwol/accounts-layer@0.0.11
+
 ## 0.0.6
 
 ### Patch Changes
