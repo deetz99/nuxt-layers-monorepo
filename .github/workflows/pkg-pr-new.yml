@@ -84,7 +84,7 @@ jobs:
           const fs = require('fs');
           const output = JSON.parse(fs.readFileSync('output.json', 'utf8'));
 
-          const packages = output
+          const packages = output.packages
             .map((p) => `- ${p.name}: \`pnpm add ${p.url}\``)
             .join('\n');
 
