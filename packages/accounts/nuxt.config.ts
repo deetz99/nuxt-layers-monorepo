@@ -6,5 +6,9 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-06-10',
 
-  extends: ['@dwol/base-layer']
+  extends: ['@dwol/base-layer'],
+
+  modules: [
+    '@nuxt/test-utils/module'
+  ]
 })

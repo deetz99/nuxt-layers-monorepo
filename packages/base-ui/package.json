@@ -13,7 +13,11 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "pnpm run test:unit; pnpm run test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "npx playwright test",
+    "ci:publish": "pnpm publish -r --access public"
   },
   "dependencies": {
     "@nuxt/ui": "^3.2.0"
@@ -32,6 +36,7 @@
     "happy-dom": "catalog:",
     "otpauth": "catalog:",
     "@testing-library/vue": "catalog:",
-    "@vue/test-utils": "catalog:"
+    "@vue/test-utils": "catalog:",
+    "dotenv": "catalog:"
   }
 }

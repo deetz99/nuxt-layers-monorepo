@@ -1,0 +1,22 @@
+name: Accounts Layer CI
+
+on:
+  pull_request:
+    paths:
+      - "packages/base-ui/**"
+      - "packages/accounts/**"
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./packages/accounts
+jobs:
+  accounts-layer-sre-ci:
+    uses: bcgov/bcregistry-sre/.github/workflows/frontend-ci.yaml@main
+    with:
+      node_version: 24
+      pnpm_version: 10
+      app_name: "test-accounts-layer"
+      working-directory: ./packages/accounts
+      codecov_flag: "test-accounts-layer"
