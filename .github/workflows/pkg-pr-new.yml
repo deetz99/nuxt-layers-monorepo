@@ -88,7 +88,10 @@ jobs:
             .map((p) => `- ${p.name}: \`pnpm add ${p.url}\``)
             .join('\n');
 
-          const sha = context.payload.pull_request.head.sha;
+          const sha =
+              context.event_name === 'pull_request'
+                  ? context.payload.pull_request.head.sha
+                  : context.payload.after;
           const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${sha}`;
           
           const body = `## Preview Ready!\n\nInstall preview packages for commit [${sha.substring(0, 7)}](${commitUrl}) using:\n\n${packages}`;
