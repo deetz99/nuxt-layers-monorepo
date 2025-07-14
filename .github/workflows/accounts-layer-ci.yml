@@ -18,5 +18,5 @@ jobs:
       node_version: 24
       pnpm_version: 10
       app_name: "test-accounts-layer"
-      working-directory: ./packages/accounts
+      working_directory: ./packages/accounts
       codecov_flag: "test-accounts-layer"
