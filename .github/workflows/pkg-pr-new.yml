@@ -1,6 +1,6 @@
 name: pkg-pr-new
 on: 
-  pull_request:
+  pull_request_target:
     paths: 
       - 'packages/**'
 
