@@ -25,8 +25,8 @@ export default defineConfig<ConfigOptions>({
   projects: deviceNames.map(name => ({ name, use: devices[name] })),
   webServer: {
     command: 'pnpm run dev',
-    url: 'http://localhost:3000',
-    reuseExistingServer: true,
+    port: 3000,
+    reuseExistingServer: false,
     timeout: 3000
   }
 })
