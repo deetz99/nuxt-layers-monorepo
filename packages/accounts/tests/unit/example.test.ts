@@ -10,4 +10,3 @@ describe('Example Test', () => {
     expect(wrapper.text()).toContain('Hello World! Base!')
   })
 })
-
