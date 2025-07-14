@@ -1,9 +1,7 @@
 name: pkg-pr-new
 on: 
-  push:
+  pull_request:
     paths: 
-      - 'packages/**'
-    pull_request: 
       - 'packages/**'
 
 jobs:
@@ -71,7 +69,7 @@ jobs:
 
     - name: Publish Changed Packages
       if: steps.package_list.outputs.list != ''
-      run: npx pkg-pr-new publish ${{ steps.package_list.outputs.list }} --json output.json --comment=off
+      run: npx pkg-pr-new publish ${{ steps.package_list.outputs.list }} --compact --json output.json --comment=off
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -85,8 +83,8 @@ jobs:
           const output = JSON.parse(fs.readFileSync('output.json', 'utf8'));
 
           const packages = output.packages
-            .map((p) => `- ${p.name}: \`pnpm add ${p.url}\``)
-            .join('\n');
+              .map((p) => `- ${p.name}:\n    \`\`\`\n    pnpm add ${p.url}\n    \`\`\``)
+              .join('\n\n');
 
           const sha =
               context.event_name === 'pull_request'
