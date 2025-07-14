@@ -2,6 +2,7 @@
   "name": "@dwol/base-layer",
   "type": "module",
   "version": "0.0.8",
+  "repository": "github:deetz99/nuxt-layers-monorepo",
   "main": "./nuxt.config.ts",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
