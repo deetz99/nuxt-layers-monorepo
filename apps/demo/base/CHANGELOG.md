@@ -1,5 +1,12 @@
 # base-layer-demo-app
 
+## 0.0.10-beta.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @dwol/base-layer@0.0.11-beta.0
+
 ## 0.0.9
 
 ### Patch Changes

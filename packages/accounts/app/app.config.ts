@@ -1,6 +1,6 @@
 export default defineAppConfig({
   myLayer: {
-    name: 'Hello from Nuxt layer ACCOUNTS!!'
+    name: 'Hello from Nuxt layer ACCOUNTS!! x2'
   }
 })
 
