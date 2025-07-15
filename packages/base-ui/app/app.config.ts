@@ -1,6 +1,6 @@
 export default defineAppConfig({
   myLayer: {
-    name: 'Hello from Nuxt layer NEW AGAIN x 10!!'
+    name: 'Hello from Nuxt layer NEW AGAIN x 11!!'
   }
 })
 
