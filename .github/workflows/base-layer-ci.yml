@@ -28,6 +28,7 @@ jobs:
 
   setup-playwright:
     needs: [setup-job]
+    runs-on: ubuntu-latest
     steps:
       - name: Install Playwright browsers
         run: npx playwright install chromium --only-shell
