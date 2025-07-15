@@ -12,6 +12,7 @@
     "@dwol/pay-layer": "0.0.10"
   },
   "changesets": [
-    "grumpy-gifts-pick"
+    "grumpy-gifts-pick",
+    "wild-baths-type"
   ]
 }
