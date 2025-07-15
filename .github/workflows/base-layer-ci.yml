@@ -11,7 +11,7 @@ defaults:
     shell: bash
 
 jobs:
-  playwright-tests:
+  base-layer-ci:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
@@ -20,6 +20,7 @@ jobs:
         shardIndex: [1, 2]
         shardTotal: [2]
         project: ["base-ui"]
+        package: ["@dwol/base-layer"]
     defaults:
       run:
         working-directory: ./packages/${{ matrix.project }}
@@ -34,8 +35,12 @@ jobs:
         run_install: false
     - name: Install dependencies
       run: pnpm -F @dwol/base-layer install
-    - name: Install dependencies
-      run: pnpm -F @dwol/accounts-layer install
+    - name: Run lint
+      run: pnpm -F @dwol/base-layer lint
+    - name: Run build check
+      run: pnpm -F ${{ matrix.package }} build-check
+    - name: Run unit tests
+      run: pnpm -F @dwol/base-layer test:unit
     - name: Install Playwright browsers
       run: npx playwright install chromium --only-shell
     - name: build
@@ -43,4 +48,4 @@ jobs:
     - name: preview
       run: pnpm preview&
     - name: Run Playwright tests
-      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} 
+      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
