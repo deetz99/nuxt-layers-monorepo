@@ -32,7 +32,8 @@ jobs:
         version: 10
         run_install: false
     - name: Install dependencies
-      run: pnpm install
+      working-directory: ./
+      run: pnpm -F @dwol/base-layer install
     - name: Prepare
       run: pnpm prepare
     - name: ${{ matrix.job }}
