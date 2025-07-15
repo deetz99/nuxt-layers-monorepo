@@ -33,9 +33,9 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install chromium --only-shell
       - name: build
-        run: pnpm build
+        run: pnpm -F @dwol/base-layer build
       - name: preview
-        run: pnpm preview&
+        run: pnpm -F @dwol/base-layer preview&
 
   linting:
     needs: [setup-job]
@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         project: ["base-ui"]
-        # package: ["@dwol/base-layer"]
+        package: ["@dwol/base-layer"]
     defaults:
       run:
         working-directory: ./packages/${{ matrix.project }}
@@ -61,7 +61,7 @@ jobs:
       fail-fast: false
       matrix:
         project: ["base-ui"]
-        # package: ["@dwol/base-layer"]
+        package: ["@dwol/base-layer"]
     defaults:
       run:
         working-directory: ./packages/${{ matrix.project }}
@@ -78,7 +78,7 @@ jobs:
       fail-fast: false
       matrix:
         project: ["base-ui"]
-        # package: ["@dwol/base-layer"]
+        package: ["@dwol/base-layer"]
     defaults:
       run:
         working-directory: ./packages/${{ matrix.project }}
@@ -111,4 +111,4 @@ jobs:
     # - name: preview
     #   run: pnpm preview&
     - name: Run Playwright tests
-      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: pnpm -F ${{ matrix.package }} test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
