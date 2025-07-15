@@ -1,5 +1,12 @@
 # forms-layer-demo-app
 
+## 0.0.9-beta.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @dwol/forms-layer@0.0.11-beta.0
+
 ## 0.0.8
 
 ### Patch Changes
