@@ -63,8 +63,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1]
-        shardTotal: [1]
+        shardIndex: [1, 2]
+        shardTotal: [2]
         project: ["base-ui"]
     defaults:
       run:
@@ -81,7 +81,7 @@ jobs:
     - name: Install dependencies
       run: pnpm -F @dwol/base-layer install
     - name: Install Playwright browsers
-      run: npx playwright install --with-deps chromium
+      run: npx playwright install chromium --only-shell
     # - name: prepare
     #   run: pnpm dev:prepare
     - name: build
@@ -89,7 +89,7 @@ jobs:
     - name: preview
       run: pnpm preview&
     - name: Run Playwright tests
-      run: pnpm test:e2e
+      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
     # - name: Run Playwright tests
     #   run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
