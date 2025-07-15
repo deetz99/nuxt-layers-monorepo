@@ -81,7 +81,7 @@ jobs:
     - name: Install dependencies
       run: pnpm -F @dwol/base-layer install
     - name: Install Playwright browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps chromium
 
     - name: Run Playwright tests
       run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
