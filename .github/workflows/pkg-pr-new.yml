@@ -87,7 +87,7 @@ jobs:
               .join('\n\n');
 
           const sha =
-              context.event_name === 'pull_request'
+              (context.event_name === 'pull_request' || context.event_name === 'pull_request_target')
                   ? context.payload.pull_request.head.sha
                   : context.payload.after;
           const commitUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${sha}`;
@@ -150,7 +150,7 @@ jobs:
             console.log('\n' + '='.repeat(50));
           }
 
-          if (context.eventName === 'pull_request') {
+          if (context.eventName === 'pull_request' || context.eventName === 'pull_request_target') {
             if (context.issue.number) {
               await createOrUpdateComment(context.issue.number);
             }
