@@ -11,5 +11,7 @@
     "@dwol/forms-layer": "0.0.12",
     "@dwol/pay-layer": "0.0.12"
   },
-  "changesets": []
+  "changesets": [
+    "gold-heads-clean"
+  ]
 }
