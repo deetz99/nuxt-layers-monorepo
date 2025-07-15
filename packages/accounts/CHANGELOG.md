@@ -1,5 +1,12 @@
 # @dwol/accounts-layer
 
+## 0.0.14
+
+### Patch Changes
+
+- Updated dependencies [[`7aad353`](https://github.com/deetz99/nuxt-layers-monorepo/commit/7aad3531449d8d5f4e0332352d9fe84a3c52b8ec)]:
+  - @dwol/base-layer@0.0.12
+
 ## 0.0.13
 
 ### Patch Changes
