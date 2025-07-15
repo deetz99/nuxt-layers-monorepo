@@ -33,7 +33,7 @@ jobs:
     - name: Install dependencies
       run: pnpm install
     - name: Prepare
-      run: pnpm dev:prepare
+      run: pnpm prepare
     - name: ${{ matrix.job }}
       run: pnpm ${{ matrix.job }}
 

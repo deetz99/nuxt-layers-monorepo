@@ -33,8 +33,11 @@ jobs:
         run_install: false
     - name: Install dependencies
       run: pnpm install
-    - name: Prepare
-      run: pnpm dev:prepare
+    - name: Prepare base layer
+      working-directory: ./packages/base-ui
+      run: pnpm prepare accounts layer
+    - name: Prepare accounts
+      run: pnpm prepare
     - name: ${{ matrix.job }}
       run: pnpm ${{ matrix.job }}
 
