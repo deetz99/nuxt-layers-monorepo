@@ -46,7 +46,7 @@ jobs:
   #         run_install: false
 
   #     - name: Install dependencies
-  #       run: pnpm install
+  #       run: pnpm -F @dwol/base-layer install
 
   #     - name: prepare
   #       run: pnpm dev:prepare
@@ -82,11 +82,16 @@ jobs:
       run: pnpm -F @dwol/base-layer install
     - name: prepare
       run: pnpm dev:prepare
-    - name: Install Playwright browsers
-      run: npx playwright install --with-deps chromium
-
+    - name: prepare
+      run: pnpm dev&
     - name: Run Playwright tests
-      run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: pnpm test:e2e
+
+    # - name: Install Playwright browsers
+    #   run: npx playwright install --with-deps chromium
+
+    # - name: Run Playwright tests
+    #   run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
     # - name: Upload blob report to GitHub Actions Artifacts
     #   if: ${{ !cancelled() }}
