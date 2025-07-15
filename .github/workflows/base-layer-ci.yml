@@ -53,6 +53,20 @@ jobs:
       run: pnpm list
     - name: Install dependencies
       run: pnpm -F @dwol/base-layer install
+    - name: Cache node modules 2
+      id: cache-pnpm
+      uses: actions/cache@v4
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: ${{ steps.pnpm-config.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+    - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
+      name: List the state of node modules
+      continue-on-error: true
+      run: pnpm list
     - name: Install dependencies
       run: pnpm -F @dwol/accounts-layer install
     - name: Install Playwright browsers
