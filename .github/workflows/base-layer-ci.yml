@@ -80,8 +80,8 @@ jobs:
         run_install: false
     - name: Install dependencies
       run: pnpm -F @dwol/base-layer install
-    # - name: Install Playwright browsers
-    #   run: npx playwright install --with-deps chromium
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps chromium
     # - name: prepare
     #   run: pnpm dev:prepare
     - name: build
