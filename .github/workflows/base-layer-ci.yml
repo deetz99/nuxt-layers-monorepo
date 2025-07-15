@@ -32,41 +32,8 @@ jobs:
       with:
         version: 10
         run_install: false
-    - name: Expose pnpm config(s) through "$GITHUB_OUTPUT"
-      id: pnpm-config
-      shell: bash
-      run: |
-        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-    - name: Cache node modules
-      id: cache-pnpm
-      uses: actions/cache@v4
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: ${{ steps.pnpm-config.outputs.STORE_PATH }}
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-    - if: ${{ steps.cache-pnpm.outputs.cache-hit != 'true' }}
-      name: List the state of node modules
-      continue-on-error: true
-      run: pnpm list
     - name: Install dependencies
       run: pnpm -F @dwol/base-layer install
-    - name: Cache node modules 2
-      id: cache-pnpm-2
-      uses: actions/cache@v4
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: ${{ steps.pnpm-config.outputs.STORE_PATH }}
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-    - if: ${{ steps.cache-pnpm-2.outputs.cache-hit != 'true' }}
-      name: List the state of node modules
-      continue-on-error: true
-      run: pnpm list
     - name: Install dependencies
       run: pnpm -F @dwol/accounts-layer install
     - name: Install Playwright browsers
