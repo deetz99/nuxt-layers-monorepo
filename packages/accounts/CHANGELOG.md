@@ -1,5 +1,14 @@
 # @dwol/accounts-layer
 
+## 0.0.15
+
+### Patch Changes
+
+- [#70](https://github.com/deetz99/nuxt-layers-monorepo/pull/70) [`86af971`](https://github.com/deetz99/nuxt-layers-monorepo/commit/86af97117b0fd4daac5426a2e01447ca21e421e7) Thanks [@deetz99](https://github.com/deetz99)! - Update app config in base and accounts
+
+- Updated dependencies [[`0ef0273`](https://github.com/deetz99/nuxt-layers-monorepo/commit/0ef0273017898c2d834243c0b8e420b6845a21ec), [`86af971`](https://github.com/deetz99/nuxt-layers-monorepo/commit/86af97117b0fd4daac5426a2e01447ca21e421e7)]:
+  - @dwol/base-layer@0.0.13
+
 ## 0.0.15-beta.0
 
 ### Patch Changes
