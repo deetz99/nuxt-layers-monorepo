@@ -35,6 +35,8 @@ jobs:
         cache: 'pnpm'
     - name: Install base layer dependencies
       run: pnpm -F @dwol/base-layer install
+    - name: Generate base layer types
+      run: pnpm -F @dwol/base-layer prepare
     - name: Install dependencies
       run: pnpm -F ${{ matrix.package }} install
     - name: Set basic env
