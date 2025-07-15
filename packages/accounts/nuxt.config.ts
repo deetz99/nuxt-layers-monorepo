@@ -4,7 +4,7 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false },
 
-  compatibilityDate: '2025-06-10',
+  compatibilityDate: '2025-07-10',
 
   extends: ['@dwol/base-layer'],
 

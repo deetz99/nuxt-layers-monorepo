@@ -6,8 +6,7 @@
   "main": "./nuxt.config.ts",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "nuxi dev",
-    "dev:playground": "nuxi dev .playground",
+    "dev": "nuxi dev .playground",
     "dev:prepare": "nuxt prepare .playground",
     "build": "nuxt build .playground",
     "generate": "nuxt generate .playground",
