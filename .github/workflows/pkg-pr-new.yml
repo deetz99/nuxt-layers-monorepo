@@ -16,6 +16,8 @@ jobs:
     steps:
     - name: Checkout code repository
       uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Determine changes in packages
       uses: dorny/paths-filter@v3
@@ -80,8 +82,10 @@ jobs:
       with:
         github-token: ${{ secrets.GH_PAT }}
         script: |
+          console.log('Starting custom comment script...')
           const fs = require('fs');
           const output = JSON.parse(fs.readFileSync('output.json', 'utf8'));
+          console.log('Read output.json:', output)
 
           const packages = output.packages
               .map((p) => `- ${p.name}:\n    \`\`\`\n    pnpm add ${p.url}\n    \`\`\``)
@@ -104,6 +108,7 @@ jobs:
           const botCommentIdentifier = '## Preview Ready!';
 
           async function findBotComment(issueNumber) {
+            console.log('ISSUE NUMBER: ', issueNumber)
             if (!issueNumber) return null;
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
