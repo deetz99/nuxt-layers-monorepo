@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test'
 
 test.describe('Example 2', () => {
+  test('another Example 2 test', async ({ page }) => {
+    await page.goto('./')
+    await expect(page.getByRole('heading', { name: 'Hello World! Base!' })).toBeVisible()
+  })
   test('Base page loads with expected visuals 2', async ({ page }) => {
     await page.goto('./')
     await expect(page.getByText('Hello World text base')).toBeVisible()

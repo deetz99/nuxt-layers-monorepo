@@ -5,4 +5,12 @@ test.describe('Example 3', () => {
     await page.goto('./')
     await expect(page.getByText('Hello this should err')).toBeVisible()
   })
+  test('another example 3 test', async ({ page }) => {
+    await page.goto('./')
+    await expect(page.getByText('Hello this should err')).toBeVisible()
+  })
+  test('another example 3 test', async ({ page }) => {
+    await page.goto('./')
+    await expect(page.getByText('Hello this should err')).toBeVisible()
+  })
 })
