@@ -1,8 +1,4 @@
-export default defineAppConfig({
-  myLayer: {
-    name: 'Hello from Nuxt layer ACCOUNTS!!'
-  }
-})
+export default defineAppConfig({})
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
