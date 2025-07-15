@@ -31,13 +31,8 @@ jobs:
       with:
         node-version: 24
         cache: 'pnpm'
-        cache-dependency-path: ./pnpm-lock.yaml
-    - name: test
-      working-directory: ./
-      run: ls
     - name: Install dependencies
-      working-directory: ./
-      run: pnpm -F @dwol/base-layer install
+      run: pnpm install
     - name: Prepare
       run: pnpm prepare
     - name: ${{ matrix.job }}
