@@ -74,6 +74,10 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 24
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 10
+        run_install: false
     - name: Install dependencies
       run: pnpm install
     - name: Install Playwright browsers
@@ -90,38 +94,38 @@ jobs:
         path: blob-report
         retention-days: 1
 
-  merge-reports:
-    # Merge reports after playwright-tests, even if some shards have failed
-    if: ${{ !cancelled() }}
-    needs: [playwright-tests]
+  # merge-reports:
+  #   # Merge reports after playwright-tests, even if some shards have failed
+  #   if: ${{ !cancelled() }}
+  #   needs: [playwright-tests]
 
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 24
-    - uses: pnpm/action-setup@v4
-      with:
-        version: 10
-        run_install: false
-    - name: Install dependencies
-      run: pnpm install
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v4
+  #   - uses: actions/setup-node@v4
+  #     with:
+  #       node-version: 24
+  #   - uses: pnpm/action-setup@v4
+  #     with:
+  #       version: 10
+  #       run_install: false
+  #   - name: Install dependencies
+  #     run: pnpm install
 
-    - name: Download blob reports from GitHub Actions Artifacts
-      uses: actions/download-artifact@v4
-      with:
-        path: all-blob-reports
-        pattern: blob-report-*
-        merge-multiple: true
+  #   - name: Download blob reports from GitHub Actions Artifacts
+  #     uses: actions/download-artifact@v4
+  #     with:
+  #       path: all-blob-reports
+  #       pattern: blob-report-*
+  #       merge-multiple: true
 
-    - name: Merge into HTML Report
-      run: npx playwright merge-reports --reporter html ./all-blob-reports
+  #   - name: Merge into HTML Report
+  #     run: npx playwright merge-reports --reporter html ./all-blob-reports
 
-    - name: Upload HTML report
-      uses: actions/upload-artifact@v4
-      with:
-        name: html-report--attempt-${{ github.run_attempt }}
-        path: playwright-report
-        retention-days: 1
+  #   - name: Upload HTML report
+  #     uses: actions/upload-artifact@v4
+  #     with:
+  #       name: html-report--attempt-${{ github.run_attempt }}
+  #       path: playwright-report
+  #       retention-days: 1
     
