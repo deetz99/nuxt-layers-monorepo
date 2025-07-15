@@ -1,0 +1,15 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "accounts-layer-demo-app": "0.0.10",
+    "base-layer-demo-app": "0.0.11",
+    "forms-layer-demo-app": "0.0.10",
+    "pay-layer-demo-app": "0.0.10",
+    "@dwol/accounts-layer": "0.0.14",
+    "@dwol/base-layer": "0.0.12",
+    "@dwol/forms-layer": "0.0.12",
+    "@dwol/pay-layer": "0.0.12"
+  },
+  "changesets": []
+}
