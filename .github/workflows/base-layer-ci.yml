@@ -11,49 +11,109 @@ defaults:
     shell: bash
 
 jobs:
-  setup-job:
-    runs-on: ubuntu-24.04
+  # setup-job:
+  #   runs-on: ubuntu-24.04
 
-    steps:
-      - uses: actions/checkout@v4
-      - run: "true"
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - run: "true"
 
-  base-layer-e2e-test:
-    needs: setup-job
-    runs-on: ubuntu-24.04
+  # base-layer-e2e-test:
+  #   needs: setup-job
+  #   runs-on: ubuntu-24.04
     
-    strategy:
-      matrix:
-        project: ["base-ui"]
-      fail-fast: false
+  #   strategy:
+  #     matrix:
+  #       project: ["base-ui"]
+  #     fail-fast: false
 
-    defaults:
-      run:
-        working-directory: ./packages/${{ matrix.project }}
+  #   defaults:
+  #     run:
+  #       working-directory: ./packages/${{ matrix.project }}
   
+  #   steps:
+  #     - uses: actions/checkout@v4
+
+  #     - name: Set up Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 24
+
+  #     - name: Install pnpm
+  #       uses: pnpm/action-setup@v4
+  #       with:
+  #         version: 10
+  #         run_install: false
+
+  #     - name: Install dependencies
+  #       run: pnpm install
+
+  #     - name: prepare
+  #       run: pnpm dev:prepare
+
+  #     # - name: prepare
+  #     #   run: pnpm dev&
+
+  #     - name: Run Playwright tests
+  #       run: pnpm test:e2e
+  
+  playwright-tests:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
     steps:
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 24
+    - name: Install dependencies
+      run: pnpm install
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
+    - name: Run Playwright tests
+      run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-          run_install: false
+    - name: Upload blob report to GitHub Actions Artifacts
+      if: ${{ !cancelled() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: blob-report-${{ matrix.shardIndex }}
+        path: blob-report
+        retention-days: 1
 
-      - name: Install dependencies
-        run: pnpm install
+  merge-reports:
+    # Merge reports after playwright-tests, even if some shards have failed
+    if: ${{ !cancelled() }}
+    needs: [playwright-tests]
 
-      - name: prepare
-        run: pnpm dev:prepare
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 24
+    - name: Install dependencies
+      run: pnpm install
 
-      # - name: prepare
-      #   run: pnpm dev&
+    - name: Download blob reports from GitHub Actions Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: all-blob-reports
+        pattern: blob-report-*
+        merge-multiple: true
 
-      - name: Run Playwright tests
-        run: pnpm test:e2e
+    - name: Merge into HTML Report
+      run: npx playwright merge-reports --reporter html ./all-blob-reports
+
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v4
+      with:
+        name: html-report--attempt-${{ github.run_attempt }}
+        path: playwright-report
+        retention-days: 1
     
