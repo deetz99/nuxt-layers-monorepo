@@ -1,5 +1,12 @@
 # @dwol/pay-layer
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [[`86af971`](https://github.com/deetz99/nuxt-layers-monorepo/commit/86af97117b0fd4daac5426a2e01447ca21e421e7)]:
+  - @dwol/accounts-layer@0.0.15
+
 ## 0.0.13-beta.0
 
 ### Patch Changes
