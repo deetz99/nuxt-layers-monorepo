@@ -63,8 +63,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
+        shardIndex: [1]
+        shardTotal: [1]
         project: ["base-ui"]
     defaults:
       run:
@@ -79,7 +79,7 @@ jobs:
         version: 10
         run_install: false
     - name: Install dependencies
-      run: pnpm install
+      run: pnpm install -C @dwol/base-layer
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
 

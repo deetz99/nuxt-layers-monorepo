@@ -16,7 +16,7 @@ export default defineConfig<ConfigOptions>({
       runner: 'vitest'
     },
     actionTimeout: 2000,
-    baseURL: process.env.NUXT_BASE_URL,
+    baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'off',
     // do not open browser
