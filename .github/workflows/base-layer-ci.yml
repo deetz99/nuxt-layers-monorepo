@@ -20,7 +20,8 @@ jobs:
         package: ["@dwol/base-layer"]
         job: ['lint', 'build-check', 'test:unit']
     defaults:
-      working-directory: ./packages/${{ matrix.project }}
+      run:
+        working-directory: ./packages/${{ matrix.project }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -45,7 +46,8 @@ jobs:
         project: ["base-ui"]
         package: ["@dwol/base-layer"]
     defaults:
-      working-directory: ./packages/${{ matrix.project }}
+      run:
+        working-directory: ./packages/${{ matrix.project }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
