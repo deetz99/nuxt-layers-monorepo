@@ -65,6 +65,10 @@ jobs:
       matrix:
         shardIndex: [1, 2, 3, 4]
         shardTotal: [4]
+        project: ["base-ui"]
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
