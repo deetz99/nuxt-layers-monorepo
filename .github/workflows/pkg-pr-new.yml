@@ -4,6 +4,11 @@ on:
     paths: 
       - 'packages/**'
 
+permissions:
+  pull-requests: write
+  contents: read
+  issues: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
