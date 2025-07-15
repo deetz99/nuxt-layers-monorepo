@@ -27,13 +27,12 @@ jobs:
       with:
         node-version: 24
     - uses: pnpm/action-setup@v4
+      cache: 'pnpm'
+      cache-dependency-path: '../../pnpm-lock.yaml'
       with:
         version: 10
-        cache: 'pnpm'
-        cache-dependency-path: './pnpm-lock.yaml'
         run_install: false
     - name: Install dependencies
-      working-directory: ./
       run: pnpm install
     - name: Prepare
       run: pnpm prepare
