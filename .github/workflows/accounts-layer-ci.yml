@@ -3,20 +3,68 @@ name: Accounts Layer CI
 on:
   pull_request:
     paths:
-      - "suspend/packages/base-ui/**"
-      - "suspend/packages/accounts/**"
+      - "packages/base-ui/**"
+      - "packages/accounts/**"
   workflow_dispatch:
 
 defaults:
   run:
     shell: bash
-    working-directory: ./
+
 jobs:
-  accounts-layer-sre-ci:
-    uses: bcgov/bcregistry-sre/.github/workflows/frontend-ci.yaml@main
-    with:
-      node_version: 24
-      pnpm_version: 10
-      app_name: "test-accounts-layer"
-      working_directory: ./
-      codecov_flag: "test-accounts-layer"
+  CI:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["accounts"]
+        job: ['lint', 'build-check', 'test:unit']
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 24
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 10
+        run_install: false
+    - name: Install dependencies
+      run: pnpm install
+    - name: Prepare
+      run: pnpm dev:prepare
+    - name: ${{ matrix.job }}
+      run: pnpm ${{ matrix.job }}
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["accounts"]
+        shardIndex: [1, 2]
+        shardTotal: [2]
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 24
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 10
+        run_install: false
+    - name: Install dependencies
+      run: pnpm install
+    - name: Install Playwright browsers
+      run: npx playwright install chromium --only-shell
+    - name: build
+      run: pnpm build
+    - name: preview
+      run: pnpm preview&
+    - name: Run Playwright tests
+      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}

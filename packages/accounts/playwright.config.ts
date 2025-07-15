@@ -26,7 +26,7 @@ export default defineConfig<ConfigOptions>({
   webServer: {
     command: 'pnpm run dev',
     url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.GITHUB_RUN_ID,
+    reuseExistingServer: true,
     timeout: 3000
   }
 })

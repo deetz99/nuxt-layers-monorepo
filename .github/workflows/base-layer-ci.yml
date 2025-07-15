@@ -42,9 +42,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        project: ["base-ui"]
         shardIndex: [1, 2]
         shardTotal: [2]
-        project: ["base-ui"]
     defaults:
       run:
         working-directory: ./packages/${{ matrix.project }}
