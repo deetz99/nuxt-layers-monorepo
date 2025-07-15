@@ -1,5 +1,15 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.11
+
+### Patch Changes
+
+- [#63](https://github.com/deetz99/nuxt-layers-monorepo/pull/63) [`ab006d6`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ab006d6700e707190381c59f7bbe4b9e8650bd16) Thanks [@deetz99](https://github.com/deetz99)! - Update text again
+
+- [#63](https://github.com/deetz99/nuxt-layers-monorepo/pull/63) [`ab006d6`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ab006d6700e707190381c59f7bbe4b9e8650bd16) Thanks [@deetz99](https://github.com/deetz99)! - Update text
+
+- [#63](https://github.com/deetz99/nuxt-layers-monorepo/pull/63) [`ab006d6`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ab006d6700e707190381c59f7bbe4b9e8650bd16) Thanks [@deetz99](https://github.com/deetz99)! - Update text again and change publish script
+
 ## 0.0.11-beta.2
 
 ### Patch Changes
