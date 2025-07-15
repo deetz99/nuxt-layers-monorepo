@@ -11,8 +11,84 @@ defaults:
     shell: bash
 
 jobs:
-  base-layer-ci:
-    timeout-minutes: 60
+  setup-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+      - name: Install dependencies
+        run: pnpm -F @dwol/base-layer install
+
+  setup-playwright:
+    needs: [setup-job]
+    steps:
+      - name: Install Playwright browsers
+        run: npx playwright install chromium --only-shell
+      - name: build
+        run: pnpm build
+      - name: preview
+        run: pnpm preview&
+
+  linting:
+    needs: [setup-job]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["base-ui"]
+        # package: ["@dwol/base-layer"]
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
+    steps:
+    # - name: Install dependencies
+    #   run: pnpm -F ${{ matrix.package }} install
+    - name: Run lint
+      run: pnpm -F ${{ matrix.package }} lint
+
+  build-check:
+    needs: [setup-job]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["base-ui"]
+        # package: ["@dwol/base-layer"]
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
+    steps:
+    # - name: Install dependencies
+    #   run: pnpm -F ${{ matrix.package }} install
+    - name: Run build check
+      run: pnpm -F ${{ matrix.package }} build-check
+
+  unit-tests:
+    needs: [setup-job]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["base-ui"]
+        # package: ["@dwol/base-layer"]
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
+    steps:
+    # - name: Install dependencies
+    #   run: pnpm -F ${{ matrix.package }} install
+    - name: Run unit tests
+      run: pnpm -F ${{ matrix.package }} test:unit
+
+  e2e-tests:
+    needs: [setup-job, setup-playwright]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -20,32 +96,18 @@ jobs:
         shardIndex: [1, 2]
         shardTotal: [2]
         project: ["base-ui"]
-        package: ["@dwol/base-layer"]
+        # package: ["@dwol/base-layer"]
     defaults:
       run:
         working-directory: ./packages/${{ matrix.project }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 24
-    - uses: pnpm/action-setup@v4
-      with:
-        version: 10
-        run_install: false
-    - name: Install dependencies
-      run: pnpm -F @dwol/base-layer install
-    - name: Run lint
-      run: pnpm -F @dwol/base-layer lint
-    - name: Run build check
-      run: pnpm -F ${{ matrix.package }} build-check
-    - name: Run unit tests
-      run: pnpm -F @dwol/base-layer test:unit
-    - name: Install Playwright browsers
-      run: npx playwright install chromium --only-shell
-    - name: build
-      run: pnpm build
-    - name: preview
-      run: pnpm preview&
+    # - name: Install dependencies
+    #   run: pnpm -F ${{ matrix.package }} install
+    # - name: Install Playwright browsers
+    #   run: npx playwright install chromium --only-shell
+    # - name: build
+    #   run: pnpm build
+    # - name: preview
+    #   run: pnpm preview&
     - name: Run Playwright tests
       run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
