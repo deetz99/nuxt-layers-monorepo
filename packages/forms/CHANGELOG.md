@@ -1,5 +1,26 @@
 # @dwol/forms-layer
 
+## 0.0.11-beta.2
+
+### Patch Changes
+
+- Updated dependencies [[`0b7ba1f`](https://github.com/deetz99/nuxt-layers-monorepo/commit/0b7ba1f58d9f977e8d6fa80048a1ccf14d733c13)]:
+  - @dwol/base-layer@0.0.11-beta.2
+
+## 0.0.11-beta.1
+
+### Patch Changes
+
+- Updated dependencies [[`e6436b1`](https://github.com/deetz99/nuxt-layers-monorepo/commit/e6436b111d31aa212f38bb343f7d0d00717010d5)]:
+  - @dwol/base-layer@0.0.11-beta.1
+
+## 0.0.11-beta.0
+
+### Patch Changes
+
+- Updated dependencies [[`3ec442a`](https://github.com/deetz99/nuxt-layers-monorepo/commit/3ec442a800d9b8baf871838d7dc34243c537ae87)]:
+  - @dwol/base-layer@0.0.11-beta.0
+
 ## 0.0.10
 
 ### Patch Changes
