@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.13-beta.0
+
+### Patch Changes
+
+- [#68](https://github.com/deetz99/nuxt-layers-monorepo/pull/68) [`0ef0273`](https://github.com/deetz99/nuxt-layers-monorepo/commit/0ef0273017898c2d834243c0b8e420b6845a21ec) Thanks [@deetz99](https://github.com/deetz99)! - Update text
+
 ## 0.0.12
 
 ### Patch Changes

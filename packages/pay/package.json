@@ -1,7 +1,7 @@
 {
   "name": "@dwol/pay-layer",
   "type": "module",
-  "version": "0.0.12",
+  "version": "0.0.13-beta.0",
   "repository": "github:deetz99/nuxt-layers-monorepo",
   "main": "./nuxt.config.ts",
   "scripts": {
