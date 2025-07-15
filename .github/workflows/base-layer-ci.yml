@@ -80,19 +80,21 @@ jobs:
         run_install: false
     - name: Install dependencies
       run: pnpm -F @dwol/base-layer install
+    - name: prepare
+      run: pnpm dev:prepare
     - name: Install Playwright browsers
       run: npx playwright install --with-deps chromium
 
     - name: Run Playwright tests
       run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
-    - name: Upload blob report to GitHub Actions Artifacts
-      if: ${{ !cancelled() }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: blob-report-${{ matrix.shardIndex }}
-        path: blob-report
-        retention-days: 1
+    # - name: Upload blob report to GitHub Actions Artifacts
+    #   if: ${{ !cancelled() }}
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: blob-report-${{ matrix.shardIndex }}
+    #     path: blob-report
+    #     retention-days: 1
 
   # merge-reports:
   #   # Merge reports after playwright-tests, even if some shards have failed
