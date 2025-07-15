@@ -12,6 +12,7 @@
     "@dwol/pay-layer": "0.0.10"
   },
   "changesets": [
+    "angry-seals-show",
     "grumpy-gifts-pick",
     "wild-baths-type"
   ]
