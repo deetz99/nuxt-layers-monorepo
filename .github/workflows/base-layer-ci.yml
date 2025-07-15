@@ -19,7 +19,7 @@ jobs:
       - run: "true"
 
   base-ci:
-    needs: [setup-job]
+    needs: setup-job
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -41,7 +41,7 @@ jobs:
       run: pnpm -F ${{ matrix.package }} ${{ matrix.job }}
 
   e2e-tests:
-    needs: [setup-job]
+    needs: setup-job
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
