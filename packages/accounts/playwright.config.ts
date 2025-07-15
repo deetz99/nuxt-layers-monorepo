@@ -16,7 +16,7 @@ export default defineConfig<ConfigOptions>({
       runner: 'vitest'
     },
     actionTimeout: 2000,
-    baseURL: 'http://localhost:3000',
+    baseURL: process.env.NUXT_BASE_URL,
     trace: 'on-first-retry',
     screenshot: 'off',
     // do not open browser
@@ -25,7 +25,7 @@ export default defineConfig<ConfigOptions>({
   projects: deviceNames.map(name => ({ name, use: devices[name] })),
   webServer: {
     command: 'pnpm run dev',
-    url: 'http://localhost:3000',
+    url: process.env.NUXT_BASE_URL,
     reuseExistingServer: true,
     timeout: 3000
   }
