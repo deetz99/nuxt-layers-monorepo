@@ -64,7 +64,7 @@ jobs:
     - name: Install dependencies
       run: pnpm install
     - name: Install Playwright browsers
-      run: npx playwright install chromium --only-shell
+      run: npx playwright install --only-shell
     - name: Set basic env
       run: |
         cp .env.example .env
