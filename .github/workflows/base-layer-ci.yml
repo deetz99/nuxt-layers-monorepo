@@ -17,11 +17,10 @@ jobs:
       fail-fast: false
       matrix:
         project: ["base-ui"]
-        package: ["@dwol/base-layer"]
         job: ['lint', 'build', 'test:unit']
     defaults:
       run:
-        working-directory: ./
+        working-directory: ./packages/${{ matrix.project }}
     steps:
     - uses: actions/checkout@v4
     - uses: pnpm/action-setup@v4
@@ -35,11 +34,10 @@ jobs:
     - name: Install dependencies
       run: pnpm install
     - name: Set basic env
-      working-directory: ./packages/${{ matrix.project }}
       run: |
         cp .env.example .env
     - name: ${{ matrix.job }}
-      run: pnpm -F ${{ matrix.package }} ${{ matrix.job }}
+      run: pnpm ${{ matrix.job }}
 
   e2e-tests:
     runs-on: ubuntu-latest
@@ -47,12 +45,11 @@ jobs:
       fail-fast: false
       matrix:
         project: ["base-ui"]
-        package: ["@dwol/base-layer"]
         shardIndex: [1, 2, 3, 4]
-        shardTotal: [2]
+        shardTotal: [4]
     defaults:
       run:
-        working-directory: ./
+        working-directory: ./packages/${{ matrix.project }}
     steps:
     - uses: actions/checkout@v4
     - uses: pnpm/action-setup@v4
@@ -68,12 +65,11 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install chromium --only-shell
     - name: Set basic env
-      working-directory: ./packages/${{ matrix.project }}
       run: |
         cp .env.example .env
     - name: build
-      run: pnpm -F ${{ matrix.package }} build
+      run: pnpm build
     - name: preview
-      run: pnpm -F ${{ matrix.package }} preview&
+      run: pnpm preview&
     - name: Run Playwright tests
-      run: pnpm -F ${{ matrix.package }} test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}

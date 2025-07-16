@@ -47,7 +47,7 @@ jobs:
       matrix:
         project: ["accounts"]
         shardIndex: [1, 2, 3, 4]
-        shardTotal: [2]
+        shardTotal: [4]
     defaults:
       run:
         working-directory: ./packages/${{ matrix.project }}
