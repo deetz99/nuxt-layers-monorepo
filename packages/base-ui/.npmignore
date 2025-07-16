@@ -1,11 +1,13 @@
 .playground
 scripts
 .nuxt
+.nuxtrc
 .eslintrc
 app/tests
 vitest.config.ts
 tests
 eslint.config.mjs
+tsconfig.json
 
 # git ignore stuff
 node_modules
