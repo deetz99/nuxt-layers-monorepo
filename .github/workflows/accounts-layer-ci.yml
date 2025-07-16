@@ -72,7 +72,5 @@ jobs:
     - name: Set basic env
       run: |
         cp .env.example .env
-    - name: start test server
-      run: pnpm build:test&
     - name: Run Playwright tests
       run: HOME=/root pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}

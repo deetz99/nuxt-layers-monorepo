@@ -41,6 +41,6 @@ export default defineConfig<ConfigOptions>({
     command: 'pnpm build:test',
     port: 3000,
     reuseExistingServer: true,
-    timeout: 3000
+    timeout: 30000
   }
 })
