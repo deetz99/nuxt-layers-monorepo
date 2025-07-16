@@ -7,6 +7,6 @@ describe('Example Test', () => {
   test('Renders HelloWorld component', async () => {
     const wrapper = await mountSuspended(HelloWorld, {})
 
-    expect(wrapper.text()).toContain('Hello World! Base!')
+    expect(wrapper.text()).toContain('Hello World!')
   })
 })

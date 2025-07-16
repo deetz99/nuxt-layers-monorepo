@@ -22,6 +22,8 @@
     "@nuxt/ui": "^3.2.0"
   },
   "devDependencies": {
+    "@dwol/playwright-config": "workspace:*",
+    "@dwol/vitest-config": "workspace:*",
     "nuxt": "catalog:",
     "typescript": "catalog:",
     "vue": "catalog:",

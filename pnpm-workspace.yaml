@@ -1,6 +1,7 @@
 packages:
   - 'apps/**'
   - 'packages/**'
+  - 'shared/**'
 
 catalog:
   nuxt: 4.0.0

@@ -311,6 +311,12 @@ importers:
       '@axe-core/playwright':
         specifier: 'catalog:'
         version: 4.10.2(playwright-core@1.53.0)
+      '@dwol/playwright-config':
+        specifier: workspace:*
+        version: link:../../shared/playwright-config
+      '@dwol/vitest-config':
+        specifier: workspace:*
+        version: link:../../shared/vitest-config
       '@faker-js/faker':
         specifier: 'catalog:'
         version: 9.8.0
@@ -363,6 +369,12 @@ importers:
       '@axe-core/playwright':
         specifier: 'catalog:'
         version: 4.10.2(playwright-core@1.53.0)
+      '@dwol/playwright-config':
+        specifier: workspace:*
+        version: link:../../shared/playwright-config
+      '@dwol/vitest-config':
+        specifier: workspace:*
+        version: link:../../shared/vitest-config
       '@faker-js/faker':
         specifier: 'catalog:'
         version: 9.8.0
@@ -506,6 +518,10 @@ importers:
       vue:
         specifier: 'catalog:'
         version: 3.5.17(typescript@5.8.3)
+
+  shared/playwright-config: {}
+
+  shared/vitest-config: {}
 
 packages:
 

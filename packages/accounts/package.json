@@ -19,6 +19,8 @@
     "ci:publish": "pnpm publish -r --access public"
   },
   "devDependencies": {
+    "@dwol/playwright-config": "workspace:*",
+    "@dwol/vitest-config": "workspace:*",
     "@axe-core/playwright": "catalog:",
     "@faker-js/faker": "catalog:",
     "@nuxt/test-utils": "catalog:",
