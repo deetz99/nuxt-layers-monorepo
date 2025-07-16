@@ -7,11 +7,8 @@ app/tests
 vitest.config.ts
 tests
 eslint.config.mjs
-<<<<<<< Updated upstream
 tsconfig.json
-=======
 playwright-report
->>>>>>> Stashed changes
 
 # git ignore stuff
 node_modules

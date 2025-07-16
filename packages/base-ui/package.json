@@ -9,6 +9,7 @@
     "dev": "nuxi dev .playground",
     "prepare": "nuxt prepare .playground",
     "build": "nuxt build .playground",
+    "build:test": "pnpm generate && npx serve .playground/.output/public",
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
@@ -19,7 +20,7 @@
     "ci:publish": "pnpm publish -r --access public"
   },
   "dependencies": {
-    "@nuxt/ui": "^3.2.0"
+    "@nuxt/ui": "catalog:"
   },
   "devDependencies": {
     "@dwol/playwright-config": "workspace:*",
