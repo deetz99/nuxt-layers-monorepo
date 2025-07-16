@@ -1,5 +1,12 @@
 # @dwol/pay-layer
 
+## 0.0.17-beta.0
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @dwol/accounts-layer@0.0.19-beta.0
+
 ## 0.0.16
 
 ### Patch Changes
