@@ -76,4 +76,4 @@ jobs:
     - name: preview
       run: pnpm preview&
     - name: Run Playwright tests
-      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: HOME=/root pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
