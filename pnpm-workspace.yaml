@@ -3,7 +3,7 @@ packages:
   - 'packages/**'
 
 catalog:
-  nuxt: 4.0.0-rc.0
+  nuxt: 4.0.0
   typescript: ^5.8.3
   vue: "latest"
   vue-router: "^4.5.1"
