@@ -1,5 +1,14 @@
 # @dwol/pay-layer
 
+## 0.0.14
+
+### Patch Changes
+
+- [#72](https://github.com/deetz99/nuxt-layers-monorepo/pull/72) [`9f279c4`](https://github.com/deetz99/nuxt-layers-monorepo/commit/9f279c45ad72961f7d2ce9af5e41a6ed895a6d7e) Thanks [@deetz99](https://github.com/deetz99)! - Upgrade Nuxt from v4 RC to stable version
+
+- Updated dependencies [[`9f279c4`](https://github.com/deetz99/nuxt-layers-monorepo/commit/9f279c45ad72961f7d2ce9af5e41a6ed895a6d7e)]:
+  - @dwol/accounts-layer@0.0.16
+
 ## 0.0.13
 
 ### Patch Changes
