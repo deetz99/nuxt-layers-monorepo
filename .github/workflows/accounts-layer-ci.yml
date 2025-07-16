@@ -49,6 +49,8 @@ jobs:
         shardIndex: [1, 2, 3, 4]
         shardTotal: [4]
     defaults:
+      environment:
+        CI: true
       run:
         working-directory: ./packages/${{ matrix.project }}
     steps:

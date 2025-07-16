@@ -21,6 +21,7 @@ export default defineConfig<ConfigOptions>({
   globalSetup: './tests/e2e/setup',
   testDir: './tests/e2e',
   testMatch: '*.spec.ts',
+  workers: process.env.CI ? 1 : undefined,
   use: {
     nuxt: {
       rootDir: resolve('./'),
