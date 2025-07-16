@@ -1,5 +1,18 @@
 # @dwol/accounts-layer
 
+## 0.0.17
+
+### Patch Changes
+
+- [#76](https://github.com/deetz99/nuxt-layers-monorepo/pull/76) [`c51c2fd`](https://github.com/deetz99/nuxt-layers-monorepo/commit/c51c2fd2e2353d7c8dee0a6fbf3859422a1ad5f6) Thanks [@deetz99](https://github.com/deetz99)! - - set pkg-pr-new workflow to ignore changesets prs
+  - add stackblitz template to pkg-pr-new workflow
+  - remove unnecessary publish script from packages/package.json
+  - update npm ignore to exclude .nuxtrc and tsconfig.json files
+  - set main publish script to use changesets publish instead of pnpm publish
+    - this should hopefully create github releases automatically
+- Updated dependencies [[`c51c2fd`](https://github.com/deetz99/nuxt-layers-monorepo/commit/c51c2fd2e2353d7c8dee0a6fbf3859422a1ad5f6)]:
+  - @dwol/base-layer@0.0.15
+
 ## 0.0.16
 
 ### Patch Changes

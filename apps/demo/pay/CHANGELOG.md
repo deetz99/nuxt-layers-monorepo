@@ -1,5 +1,12 @@
 # pay-layer-demo-app
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [[`c51c2fd`](https://github.com/deetz99/nuxt-layers-monorepo/commit/c51c2fd2e2353d7c8dee0a6fbf3859422a1ad5f6)]:
+  - @dwol/pay-layer@0.0.15
+
 ## 0.0.12
 
 ### Patch Changes
