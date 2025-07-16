@@ -70,4 +70,4 @@ jobs:
 
     - name: Publish Changed Packages
       if: steps.package_list.outputs.list != ''
-      run: npx pkg-pr-new publish ${{ steps.package_list.outputs.list }} --compact --pnpm --packageManager=pnpm --template './apps/demo/base'
+      run: npx pkg-pr-new publish ${{ steps.package_list.outputs.list }} --compact --pnpm --packageManager=pnpm --template './apps/stackblitz-template'
