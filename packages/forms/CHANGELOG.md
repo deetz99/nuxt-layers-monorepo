@@ -1,5 +1,12 @@
 # @dwol/forms-layer
 
+## 0.0.16
+
+### Patch Changes
+
+- Updated dependencies [[`ab67068`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ab67068d5234967c88b4d02d808ae4a0449398a5), [`ab67068`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ab67068d5234967c88b4d02d808ae4a0449398a5)]:
+  - @dwol/base-layer@0.0.16
+
 ## 0.0.15
 
 ### Patch Changes
