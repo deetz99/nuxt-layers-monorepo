@@ -39,11 +39,6 @@ jobs:
       working-directory: ./packages/${{ matrix.project }}
       run: |
         cp .env.example .env
-    # - name: Prepare base layer
-    #   working-directory: ./packages/base-ui
-    #   run: pnpm prepare accounts layer
-    # - name: Prepare accounts
-    #   run: pnpm prepare
     - name: ${{ matrix.job }}
       run: pnpm -F ${{ matrix.package }} ${{ matrix.job }}
 
@@ -53,11 +48,12 @@ jobs:
       fail-fast: false
       matrix:
         project: ["accounts"]
-        shardIndex: [1, 2]
+        package: ["@dwol/accounts-layer"]
+        shardIndex: [1, 2, 3, 4]
         shardTotal: [2]
     defaults:
       run:
-        working-directory: ./packages/${{ matrix.project }}
+        working-directory: ./
     steps:
     - uses: actions/checkout@v4
     - uses: pnpm/action-setup@v4
@@ -72,9 +68,13 @@ jobs:
       run: pnpm install
     - name: Install Playwright browsers
       run: npx playwright install chromium --only-shell
+    - name: Set basic env
+      working-directory: ./packages/${{ matrix.project }}
+      run: |
+        cp .env.example .env
     - name: build
-      run: pnpm build
+      run: pnpm -F ${{ matrix.package }} build
     - name: preview
-      run: pnpm preview&
+      run: pnpm -F ${{ matrix.package }} preview&
     - name: Run Playwright tests
-      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: pnpm -F ${{ matrix.package }} test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
