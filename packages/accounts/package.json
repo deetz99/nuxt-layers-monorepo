@@ -12,8 +12,7 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "ci:publish": "pnpm publish -r --access public"
+    "lint:fix": "eslint --fix ."
   },
   "devDependencies": {
     "@axe-core/playwright": "catalog:",

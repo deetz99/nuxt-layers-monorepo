@@ -9,7 +9,7 @@
   "license": "ISC",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "ci:publish": "pnpm -r publish --access public --no-git-checks",
+    "ci:publish": "changeset publish",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
