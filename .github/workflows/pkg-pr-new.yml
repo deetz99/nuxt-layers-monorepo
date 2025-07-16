@@ -3,11 +3,10 @@ on:
   pull_request:
     paths: 
       - 'packages/**'
-    branches-ignore:
-      - 'changeset-release/**'
 
 jobs:
   build:
+    if: !startsWith(github.head_ref, 'changeset-release/')
     runs-on: ubuntu-latest
 
     permissions:
