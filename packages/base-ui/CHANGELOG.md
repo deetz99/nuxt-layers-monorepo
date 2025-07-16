@@ -1,5 +1,13 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.16
+
+### Patch Changes
+
+- [#78](https://github.com/deetz99/nuxt-layers-monorepo/pull/78) [`ab67068`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ab67068d5234967c88b4d02d808ae4a0449398a5) Thanks [@deetz99](https://github.com/deetz99)! - Update app.vue text
+
+- [#78](https://github.com/deetz99/nuxt-layers-monorepo/pull/78) [`ab67068`](https://github.com/deetz99/nuxt-layers-monorepo/commit/ab67068d5234967c88b4d02d808ae4a0449398a5) Thanks [@deetz99](https://github.com/deetz99)! - Update text in app config
+
 ## 0.0.15
 
 ### Patch Changes
