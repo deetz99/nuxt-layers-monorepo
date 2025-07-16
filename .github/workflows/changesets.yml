@@ -5,12 +5,14 @@ on:
     branches:
       - main
       - pre/**
+      - develop
 
 env:
   CI: true
 
 jobs:
   version-or-publish:
+    if: github.repository == 'deetz99/nuxt-layers-monorepo'
     timeout-minutes: 15
     runs-on: ubuntu-latest
     permissions:
