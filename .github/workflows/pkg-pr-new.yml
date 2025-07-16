@@ -3,6 +3,8 @@ on:
   pull_request:
     paths: 
       - 'packages/**'
+    branches-ignore:
+      - 'changeset-release/**'
 
 jobs:
   build:
