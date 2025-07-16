@@ -4,7 +4,7 @@ const something = ref(false)
 
 <template>
   <div>
-    I am a new item
+    I am a new item updated
     <br>
     {{ something }}
   </div>
