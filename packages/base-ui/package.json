@@ -1,7 +1,7 @@
 {
   "name": "@dwol/base-layer",
   "type": "module",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "repository": "github:deetz99/nuxt-layers-monorepo",
   "main": "./nuxt.config.ts",
   "scripts": {
