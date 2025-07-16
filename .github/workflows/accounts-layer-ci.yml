@@ -72,7 +72,7 @@ jobs:
       with:
         path: |
           ~/.cache/ms-playwright
-        key: ${{ runner.os }}-playwright-${{ env.cacheid }}
+        key: ${{ runner.os }}-playwright-${{ matrix.shardIndex }}-${{ env.cacheid }}
     - name: Install Playwright browsers
       if: steps.playwright-cache.outputs.cache-hit != 'true'
       run: npx playwright install --with-deps
