@@ -4,6 +4,10 @@
   "version": "0.0.17-beta.2",
   "repository": "github:deetz99/nuxt-layers-monorepo",
   "main": "./nuxt.config.ts",
+  "exports": {
+    "./style.css": "./assets/css/styles.css",
+    ".": "./nuxt.config.ts"
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "nuxi dev",
