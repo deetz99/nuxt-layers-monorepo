@@ -302,8 +302,8 @@ importers:
   packages/accounts:
     dependencies:
       '@dwol/base-layer':
-        specifier: '@dwol/base-layer@0.0.17-beta.1'
-        version: link:@dwol/base-layer@0.0.17-beta.1
+        specifier: workspace:*
+        version: link:../base-ui
     devDependencies:
       '@axe-core/playwright':
         specifier: 'catalog:'
