@@ -3,7 +3,7 @@ const something = ref(false)
 </script>
 
 <template>
-  <div class="bg-warning/50">
+  <div class="bg-yellow-500">
     I am a new item
     <br>
     {{ something }}
