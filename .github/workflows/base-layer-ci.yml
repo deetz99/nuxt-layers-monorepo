@@ -106,7 +106,7 @@ jobs:
     - name: Download blob reports from GitHub Actions Artifacts
       uses: actions/download-artifact@v4
       with:
-        path: packages/${{ matrix.project }}/blob-report-all
+        path: packages/${{ matrix.project }}/all-blob-reports
         pattern: blob-report-*
         merge-multiple: true
 
