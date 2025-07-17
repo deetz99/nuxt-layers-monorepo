@@ -6,6 +6,7 @@
   --ui-primary: var(--color-blue-500);
   --ui-radius: 0.25rem;
   --ui-error: var(--color-red-600);
+  --ui-text-inverted: #FFFFFF;
 }
 
 
