@@ -106,7 +106,7 @@ jobs:
     - name: Download blob reports from GitHub Actions Artifacts
       uses: actions/download-artifact@v4
       with:
-        path: blob-report-all
+        path: packages/${{ matrix.project }}/blob-report-all
         pattern: blob-report-*
         merge-multiple: true
 
@@ -117,5 +117,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: html-report--attempt-${{ github.run_attempt }}
-        path: playwright-report
+        path: packages/${{ matrix.project }}/playwright-report
         retention-days: 1
