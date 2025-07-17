@@ -101,4 +101,6 @@ sw.*
 # playwright e2e test
 test-results
 tests/e2e/.auth/**
-playwright-report
+**/playwright-report/*
+**/blob-report/*
+**/blob-report-all/*

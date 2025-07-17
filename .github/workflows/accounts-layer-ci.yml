@@ -3,8 +3,8 @@ name: Accounts Layer CI
 on:
   pull_request:
     paths:
-      - "packages/base-ui/**"
-      - "packages/accounts/**"
+      - "supend/packages/base-ui/**"
+      - "suspend/packages/accounts/**"
   workflow_dispatch:
 
 defaults:
