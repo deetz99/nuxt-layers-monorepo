@@ -15,11 +15,12 @@ export default defineNuxtConfig({
     'BCGovLogoSmFr': resolve('./public/BCGovLogo/gov_bc_logo_vert_fr.png'),
     'BCGovLogoLgEn': resolve('./public/BCGovLogo/gov_bc_logo_horiz_en.png'),
     'BCGovLogoLgFr': resolve('./public/BCGovLogo/gov_bc_logo_horiz_fr.png'),
-    '#base': resolve('./')
+    '#base': resolve('./'),
+    '#base-css': resolve('./app/assets/css/core-main.css')
   },
 
   css: [
-    resolve('./app/assets/css/core-main.css'),
+    resolve('./app/assets/css/core-main.css')
     // resolve('./app/assets/css/core-layout.css')
   ],
 
