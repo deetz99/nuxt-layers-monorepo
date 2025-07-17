@@ -31,6 +31,6 @@
     "vue": "catalog:"
   },
   "dependencies": {
-    "@dwol/base-layer": "workspace:*"
+    "@dwol/base-layer": "@dwol/base-layer@0.0.17-beta.1"
   }
 }
