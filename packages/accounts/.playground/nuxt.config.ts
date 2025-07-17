@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
   extends: ['..'],
-  modules: []
+  modules: [],
+  css: [
+    '~/assets/css/tw-accounts-playground.css'
+  ]
 })
