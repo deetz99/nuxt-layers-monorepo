@@ -9,5 +9,7 @@ const something = ref(false)
     {{ something }}
     <br>
     more stuff here
+    <br>
+    again more stuff
   </div>
 </template>
