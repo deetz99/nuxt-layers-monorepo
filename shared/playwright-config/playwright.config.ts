@@ -22,7 +22,7 @@ export default defineConfig<ConfigOptions>({
   testDir: './tests/e2e',
   testMatch: '*.spec.ts',
   workers: process.env.CI ? 1 : undefined,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [['list'], [process.env.CI ? 'blob' : 'html']],
   use: {
     nuxt: {
       rootDir: resolve('./'),

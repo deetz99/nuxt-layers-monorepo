@@ -84,7 +84,13 @@ jobs:
   merge-reports:
     if: ${{ !cancelled() }}
     needs: [e2e-tests]
-
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["base-ui"]
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
