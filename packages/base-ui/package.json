@@ -5,7 +5,7 @@
   "repository": "github:deetz99/nuxt-layers-monorepo",
   "main": "./nuxt.config.ts",
   "exports": {
-    "./style.css": "./assets/css/styles.css",
+    "./style.css": "./app/assets/css/core-main.css",
     ".": "./nuxt.config.ts"
   },
   "scripts": {
