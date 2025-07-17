@@ -6,6 +6,7 @@
           <HelloWorld />
           Base layer text update
           <NewItem />
+          <BaseItem />
         </div>
       </div>
     </div>
