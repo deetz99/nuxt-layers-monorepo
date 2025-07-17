@@ -1,5 +1,12 @@
 # @dwol/pay-layer
 
+## 0.0.17-beta.2
+
+### Patch Changes
+
+- Updated dependencies [[`db173be`](https://github.com/deetz99/nuxt-layers-monorepo/commit/db173bef96483c863c40460a0df10a3d21a56d9c)]:
+  - @dwol/accounts-layer@0.0.19-beta.2
+
 ## 0.0.17-beta.1
 
 ### Patch Changes
