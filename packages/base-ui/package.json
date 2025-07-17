@@ -6,7 +6,7 @@
   "main": "./nuxt.config.ts",
   "exports": {
     "./styles.css": "./app/assets/core-main.css",
-    "./nuxt.config.ts": "./nuxt.config.ts"
+    ".": "./nuxt.config.ts"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
