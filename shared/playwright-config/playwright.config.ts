@@ -31,8 +31,8 @@ export default defineConfig<ConfigOptions>({
     },
     actionTimeout: 2000,
     baseURL: process.env.NUXT_BASE_URL,
-    trace: 'on-first-retry',
-    screenshot: 'off',
+    trace: 'retain-on-failure',
+    screenshot: 'on-first-failure',
     // do not open browser
     headless: true
   },
