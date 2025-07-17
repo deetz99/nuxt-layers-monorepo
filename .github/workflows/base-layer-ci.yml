@@ -73,6 +73,12 @@ jobs:
         cp .env.example .env
     - name: Run Playwright tests
       run: HOME=/root pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+    - name: test 1
+      run: |
+        ls
+    - name: test 2
+      run: |
+        ls blob-report
     - name: Upload blob report to GitHub Actions Artifacts
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
