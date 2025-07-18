@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="bg-green-950/40">
+  <div class="bg-red-800/50">
     New Item Accounts Layer
   </div>
 </template>
