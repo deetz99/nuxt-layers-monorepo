@@ -20,8 +20,8 @@ export default defineNuxtConfig({
 
   css: [
     // resolve('./app/assets/css/core-main.css')
-    resolve('./app/assets/css/core-layout.css'),
-    resolve('./app/assets/css/core-tw.css')
+    // resolve('./app/assets/css/core-layout.css'),
+    // resolve('./app/assets/css/core-tw.css')
   ],
 
   compatibilityDate: '2025-07-10'
