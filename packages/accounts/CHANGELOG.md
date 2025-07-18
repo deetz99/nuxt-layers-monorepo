@@ -1,5 +1,11 @@
 # @dwol/accounts-layer
 
+## 0.0.19-beta.6
+
+### Patch Changes
+
+- [#99](https://github.com/deetz99/nuxt-layers-monorepo/pull/99) [`0f317cc`](https://github.com/deetz99/nuxt-layers-monorepo/commit/0f317ccf9e43651b25bc99988722e41551803ff7) Thanks [@deetz99](https://github.com/deetz99)! - Update bg color in NewItem component
+
 ## 0.0.19-beta.5
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # accounts-layer-demo-app
 
+## 0.0.15-beta.6
+
+### Patch Changes
+
+- Updated dependencies [[`0f317cc`](https://github.com/deetz99/nuxt-layers-monorepo/commit/0f317ccf9e43651b25bc99988722e41551803ff7)]:
+  - @dwol/accounts-layer@0.0.19-beta.6
+
 ## 0.0.15-beta.5
 
 ### Patch Changes
