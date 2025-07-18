@@ -80,13 +80,13 @@ jobs:
         name: blob-report-${{ matrix.shardIndex }}
         path: packages/${{ matrix.project }}/blob-report
         retention-days: 1
-    - name: Upload failure test traces and screenshots
-      if: ${{ !cancelled() }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: test-results-${{ matrix.shardIndex }}
-        path: packages/${{ matrix.project }}/test-results
-        retention-days: 1
+    # - name: Upload failure test traces and screenshots
+    #   if: ${{ !cancelled() }}
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: test-results-${{ matrix.shardIndex }}
+    #     path: packages/${{ matrix.project }}/test-results
+    #     retention-days: 2
 
   merge-reports:
     if: ${{ !cancelled() }}

@@ -9,7 +9,7 @@
 }
 
 
-@theme {
+@theme static {
   /* font */
   --font-sans: 'BCSans', 'Verdana', 'Arial', 'sans-serif';
 
