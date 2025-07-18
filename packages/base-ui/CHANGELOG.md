@@ -1,5 +1,29 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.17
+
+### Patch Changes
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Fix base layer nuxt config
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Start new feature
+
+  - add initial component
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Moved CSS files into regular app/assets
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Update new item component
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Update new item component
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Add new component to base layer
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Add ref to NewItem component
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Chore(release): enter rc version
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Make a small edit to base app.config
+
 ## 0.0.17-rc.5
 
 ### Patch Changes
