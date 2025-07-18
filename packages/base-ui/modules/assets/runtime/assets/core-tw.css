@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+@source "../../../../";
+
 /* Customize Nuxt UI default tokens */
 :root {
   --ui-primary: var(--color-blue-500);
@@ -8,7 +10,6 @@
   --ui-error: var(--color-red-600);
   --ui-text-inverted: #FFFFFF;
 }
-
 
 @theme static {
   /* font */
