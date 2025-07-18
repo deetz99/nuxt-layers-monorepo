@@ -1,16 +1,16 @@
 {
   "mode": "pre",
-  "tag": "rc",
+  "tag": "alpha",
   "initialVersions": {
-    "accounts-layer-demo-app": "0.0.15-beta.7",
-    "base-layer-demo-app": "0.0.16-beta.4",
-    "forms-layer-demo-app": "0.0.15-beta.4",
-    "pay-layer-demo-app": "0.0.15-beta.7",
+    "accounts-layer-demo-app": "0.0.15-rc.8",
+    "base-layer-demo-app": "0.0.16-rc.5",
+    "forms-layer-demo-app": "0.0.15-rc.5",
+    "pay-layer-demo-app": "0.0.15-rc.8",
     "stackblitz-template": "0.0.0",
-    "@dwol/accounts-layer": "0.0.19-beta.7",
-    "@dwol/base-layer": "0.0.17-beta.4",
-    "@dwol/forms-layer": "0.0.17-beta.4",
-    "@dwol/pay-layer": "0.0.17-beta.7"
+    "@dwol/accounts-layer": "0.0.19-rc.8",
+    "@dwol/base-layer": "0.0.17-rc.5",
+    "@dwol/forms-layer": "0.0.17-rc.5",
+    "@dwol/pay-layer": "0.0.17-rc.8"
   },
   "changesets": [
     "cyan-terms-drop",
