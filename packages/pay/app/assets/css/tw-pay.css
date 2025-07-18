@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@import "#base/modules/assets/runtime/assets/core-tw.css";
+@import "#accounts/app/assets/css/tw-accounts.css";
+@source "../../";

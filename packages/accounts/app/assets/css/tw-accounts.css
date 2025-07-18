@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@import "#base/modules/assets/runtime/assets/core-tw.css";
+@source "../../";
+
+@theme static {
+  --color-test-test: #2E8540;
+  --color-test-test2: #1a5a96;
+}
