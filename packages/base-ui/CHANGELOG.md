@@ -1,5 +1,13 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.17-beta.3
+
+### Patch Changes
+
+- [#96](https://github.com/deetz99/nuxt-layers-monorepo/pull/96) [`381c4ec`](https://github.com/deetz99/nuxt-layers-monorepo/commit/381c4ec072c130e90f6d13b25df1fff3fff5ea92) Thanks [@deetz99](https://github.com/deetz99)! - Fix base layer nuxt config
+
+- [#94](https://github.com/deetz99/nuxt-layers-monorepo/pull/94) [`2dc30b6`](https://github.com/deetz99/nuxt-layers-monorepo/commit/2dc30b6ee789d907da666f3638e603d239057b8d) Thanks [@deetz99](https://github.com/deetz99)! - Moved CSS files into regular app/assets
+
 ## 0.0.17-beta.2
 
 ### Patch Changes
