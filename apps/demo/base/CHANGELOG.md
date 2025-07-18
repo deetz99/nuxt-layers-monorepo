@@ -1,5 +1,12 @@
 # base-layer-demo-app
 
+## 0.0.16
+
+### Patch Changes
+
+- Updated dependencies [[`381c4ec`](https://github.com/deetz99/nuxt-layers-monorepo/commit/381c4ec072c130e90f6d13b25df1fff3fff5ea92), [`a5fa22d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/a5fa22dd4050d69f529e7768e3f55bba119973dc), [`2dc30b6`](https://github.com/deetz99/nuxt-layers-monorepo/commit/2dc30b6ee789d907da666f3638e603d239057b8d), [`3ed21c8`](https://github.com/deetz99/nuxt-layers-monorepo/commit/3ed21c827d9b0bb2da42d72cff591f6ee0ea801d), [`80530c9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/80530c930a470f2e46f5b4b6bc6ef07fe0865eb3), [`9555d6b`](https://github.com/deetz99/nuxt-layers-monorepo/commit/9555d6b3d2f43f27e820b1aa922a52d8b972d826), [`23c0b90`](https://github.com/deetz99/nuxt-layers-monorepo/commit/23c0b9060a70ae68492e6c799c83db3ded4d8043), [`d6d119d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/d6d119d640c5e9e732d8ab0e4e90aa3ef555d63f), [`af772e6`](https://github.com/deetz99/nuxt-layers-monorepo/commit/af772e6615351f3123f04735934a24031e8b2f06)]:
+  - @dwol/base-layer@0.0.17
+
 ## 0.0.16-rc.5
 
 ### Patch Changes
