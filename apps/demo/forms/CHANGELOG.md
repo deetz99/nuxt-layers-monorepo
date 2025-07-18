@@ -1,5 +1,12 @@
 # forms-layer-demo-app
 
+## 0.0.15-rc.5
+
+### Patch Changes
+
+- Updated dependencies [[`d6d119d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/d6d119d640c5e9e732d8ab0e4e90aa3ef555d63f)]:
+  - @dwol/forms-layer@0.0.17-rc.5
+
 ## 0.0.15-beta.4
 
 ### Patch Changes

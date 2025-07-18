@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.17-rc.5
+
+### Patch Changes
+
+- [#104](https://github.com/deetz99/nuxt-layers-monorepo/pull/104) [`d6d119d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/d6d119d640c5e9e732d8ab0e4e90aa3ef555d63f) Thanks [@deetz99](https://github.com/deetz99)! - Chore(release): enter rc version
+
 ## 0.0.17-beta.4
 
 ### Patch Changes

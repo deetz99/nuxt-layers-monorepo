@@ -2,7 +2,7 @@
   "name": "base-layer-demo-app",
   "private": true,
   "type": "module",
-  "version": "0.0.16-beta.4",
+  "version": "0.0.16-rc.5",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build-check": "nuxt build",
