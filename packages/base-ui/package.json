@@ -16,11 +16,10 @@
     "lint:fix": "eslint --fix .",
     "test": "pnpm run test:unit; pnpm run test:e2e",
     "test:unit": "vitest run",
-    "test:e2e": "npx playwright test",
-    "ci:publish": "pnpm publish -r --access public"
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
-    "@nuxt/ui": "catalog:"
+    "@nuxt/ui": "^3.2.0"
   },
   "devDependencies": {
     "@dwol/playwright-config": "workspace:*",
