@@ -8,6 +8,6 @@ test.describe('Example 1', () => {
   })
   test('Another example 1 test', async ({ page }) => {
     await page.goto('./')
-    await expect(page.getByRole('heading', { name: 'Hello World! fail' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Hello World!' })).toBeVisible()
   })
 })
