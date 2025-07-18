@@ -423,9 +423,9 @@ importers:
 
   packages/forms:
     dependencies:
-      '@dwol/base-layer':
+      '@dwol/pay-layer':
         specifier: workspace:*
-        version: link:../base-ui
+        version: link:../pay
     devDependencies:
       '@axe-core/playwright':
         specifier: 'catalog:'
