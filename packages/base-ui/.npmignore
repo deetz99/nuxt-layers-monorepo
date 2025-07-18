@@ -8,6 +8,7 @@ vitest.config.ts
 tests
 eslint.config.mjs
 tsconfig.json
+playwright-report
 
 # git ignore stuff
 node_modules

@@ -7,14 +7,21 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "nuxi dev .playground",
-    "dev:prepare": "nuxt prepare .playground",
+    "prepare": "nuxt prepare .playground",
     "build": "nuxt build .playground",
+    "build:test": "pnpm generate && npx serve .playground/.output/public",
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "pnpm run test:unit; pnpm run test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "npx playwright test",
+    "ci:publish": "pnpm publish -r --access public"
   },
   "devDependencies": {
+    "@dwol/playwright-config": "workspace:*",
+    "@dwol/vitest-config": "workspace:*",
     "@axe-core/playwright": "catalog:",
     "@faker-js/faker": "catalog:",
     "@nuxt/test-utils": "catalog:",
@@ -28,7 +35,8 @@
     "otpauth": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
-    "vue": "catalog:"
+    "vue": "catalog:",
+    "dotenv": "catalog:"
   },
   "dependencies": {
     "@dwol/base-layer": "workspace:*"

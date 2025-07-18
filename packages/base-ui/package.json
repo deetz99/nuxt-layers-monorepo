@@ -6,19 +6,25 @@
   "main": "./nuxt.config.ts",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "nuxi dev",
-    "dev:playground": "nuxi dev .playground",
-    "dev:prepare": "nuxt prepare .playground",
+    "dev": "nuxi dev .playground",
+    "prepare": "nuxt prepare .playground",
     "build": "nuxt build .playground",
+    "build:test": "pnpm generate && npx serve .playground/.output/public",
     "generate": "nuxt generate .playground",
-    "preview": "nuxt preview .playground",
+    "preview": "npx serve .playground/.output/public",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "test": "pnpm run test:unit; pnpm run test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "npx playwright test",
+    "ci:publish": "pnpm publish -r --access public"
   },
   "dependencies": {
-    "@nuxt/ui": "^3.2.0"
+    "@nuxt/ui": "catalog:"
   },
   "devDependencies": {
+    "@dwol/playwright-config": "workspace:*",
+    "@dwol/vitest-config": "workspace:*",
     "nuxt": "catalog:",
     "typescript": "catalog:",
     "vue": "catalog:",
@@ -32,6 +38,7 @@
     "happy-dom": "catalog:",
     "otpauth": "catalog:",
     "@testing-library/vue": "catalog:",
-    "@vue/test-utils": "catalog:"
+    "@vue/test-utils": "catalog:",
+    "dotenv": "catalog:"
   }
 }

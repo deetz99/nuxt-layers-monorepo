@@ -2,10 +2,3 @@
 @import "@nuxt/ui";
 @import "./core-tw.css";
 @import "./core-layout.css";
-
-
-@source "./app/components/**/*.{js,vue,ts}";
-@source "./app/layouts/**/*.vue";
-@source "./app/pages/**/*.vue";
-@source "./app/app.vue";
-@source "./app/error.vue";

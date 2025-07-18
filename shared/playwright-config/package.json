@@ -1,0 +1,8 @@
+{
+  "name": "@dwol/playwright-config",
+  "type": "module",
+  "version": "0.0.1",
+  "repository": "github:deetz99/nuxt-layers-monorepo",
+  "main": "./playwright.config.ts",
+  "private": true
+}
