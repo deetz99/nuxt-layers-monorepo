@@ -31,6 +31,6 @@
     "@vue/test-utils": "catalog:"
   },
   "dependencies": {
-    "@dwol/pay-layer": "workspace:*"
+    "@dwol/base-layer": "workspace:*"
   }
 }
