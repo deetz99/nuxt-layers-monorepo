@@ -15,5 +15,9 @@ export default defineNuxtConfig({
     BCGovLogoLgFr: resolve('./public/BCGovLogo/gov_bc_logo_horiz_fr.png')
   },
 
-  compatibilityDate: '2025-07-10'
+  compatibilityDate: '2025-07-10',
+
+  modules: [
+    '@nuxt/test-utils/module'
+  ]
 })

@@ -4,7 +4,7 @@ const { myLayer } = useAppConfig()
 
 <template>
   <div class="bg-primary">
-    <h1>Hello World! Base! NEW x 3!!!</h1>
+    <h1>Hello World! NEW x 3!!!</h1>
     <pre>{{ myLayer }}</pre>
     <p class="text-bcGovGray-900">
       Hello World text base
