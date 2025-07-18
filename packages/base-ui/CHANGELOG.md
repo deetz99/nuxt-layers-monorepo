@@ -1,5 +1,11 @@
 # @dwol/monorepo-layer-base
 
+## 0.0.17-beta.4
+
+### Patch Changes
+
+- [#97](https://github.com/deetz99/nuxt-layers-monorepo/pull/97) [`af772e6`](https://github.com/deetz99/nuxt-layers-monorepo/commit/af772e6615351f3123f04735934a24031e8b2f06) Thanks [@deetz99](https://github.com/deetz99)! - Make a small edit to base app.config
+
 ## 0.0.17-beta.3
 
 ### Patch Changes
