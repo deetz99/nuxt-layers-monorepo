@@ -1,0 +1,29 @@
+{
+  "mode": "exit",
+  "tag": "alpha",
+  "initialVersions": {
+    "accounts-layer-demo-app": "0.0.15-rc.8",
+    "base-layer-demo-app": "0.0.16-rc.5",
+    "forms-layer-demo-app": "0.0.15-rc.5",
+    "pay-layer-demo-app": "0.0.15-rc.8",
+    "stackblitz-template": "0.0.0",
+    "@dwol/accounts-layer": "0.0.19-rc.8",
+    "@dwol/base-layer": "0.0.17-rc.5",
+    "@dwol/forms-layer": "0.0.17-rc.5",
+    "@dwol/pay-layer": "0.0.17-rc.8"
+  },
+  "changesets": [
+    "cyan-terms-drop",
+    "floppy-berries-count",
+    "gold-mice-smell",
+    "green-pans-stand",
+    "huge-hoops-kiss",
+    "metal-snails-shout",
+    "orange-rooms-invite",
+    "rare-donuts-rest",
+    "slimy-cameras-travel",
+    "spicy-socks-trade",
+    "sweet-news-agree",
+    "yummy-comics-check"
+  ]
+}

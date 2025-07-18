@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { createResolver } from 'nuxt/kit'
+
+const { resolve } = createResolver(import.meta.url)
+
 export default defineNuxtConfig({
   ssr: false,
 
@@ -8,7 +12,7 @@ export default defineNuxtConfig({
 
   extends: ['@dwol/base-layer'],
 
-  modules: [
-    '@nuxt/test-utils/module'
+  css: [
+    resolve('./app/assets/css/tw-accounts.css')
   ]
 })

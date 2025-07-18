@@ -16,7 +16,8 @@ export default defineNuxtModule<ModuleOptions>({
     console.info('setting up assets module')
     const resolver = createResolver(import.meta.url)
 
-    _nuxt.options.css.push(resolver.resolve('./runtime/assets/core-main.css'))
+    // _nuxt.options.css.push(resolver.resolve('./runtime/assets/core-main.css'))
+    _nuxt.options.css.push(resolver.resolve('./runtime/assets/core-tw.css'))
     _nuxt.options.css.push(resolver.resolve('./runtime/assets/core-layout.css'))
     await installModule('@nuxt/ui')
   }

@@ -5,6 +5,8 @@
         <div class="grow max-w-full overflow-hidden">
           <HelloWorld />
           Base layer text update
+          <NewItem />
+          <BaseItem />
         </div>
       </div>
     </div>

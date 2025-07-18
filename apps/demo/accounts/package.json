@@ -2,7 +2,7 @@
   "name": "accounts-layer-demo-app",
   "private": true,
   "type": "module",
-  "version": "0.0.14",
+  "version": "0.0.15-rc.8",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build-check": "nuxt build",

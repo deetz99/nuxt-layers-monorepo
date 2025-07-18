@@ -7,17 +7,22 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false },
 
+  modules: ['@nuxt/ui'],
+
   alias: {
-    BCGovFonts: resolve('./public/fonts/BCSans'),
-    BCGovLogoSmEn: resolve('./public/BCGovLogo/gov_bc_logo_vert_en.png'),
-    BCGovLogoSmFr: resolve('./public/BCGovLogo/gov_bc_logo_vert_fr.png'),
-    BCGovLogoLgEn: resolve('./public/BCGovLogo/gov_bc_logo_horiz_en.png'),
-    BCGovLogoLgFr: resolve('./public/BCGovLogo/gov_bc_logo_horiz_fr.png')
+    'BCGovFonts': resolve('./public/fonts/BCSans'),
+    'BCGovLogoSmEn': resolve('./public/BCGovLogo/gov_bc_logo_vert_en.png'),
+    'BCGovLogoSmFr': resolve('./public/BCGovLogo/gov_bc_logo_vert_fr.png'),
+    'BCGovLogoLgEn': resolve('./public/BCGovLogo/gov_bc_logo_horiz_en.png'),
+    'BCGovLogoLgFr': resolve('./public/BCGovLogo/gov_bc_logo_horiz_fr.png'),
+    '#base': resolve('./')
   },
 
-  compatibilityDate: '2025-07-10',
+  css: [
+    // resolve('./app/assets/css/core-main.css')
+    // resolve('./app/assets/css/core-layout.css'),
+    // resolve('./app/assets/css/core-tw.css')
+  ],
 
-  modules: [
-    '@nuxt/test-utils/module'
-  ]
+  compatibilityDate: '2025-07-10'
 })
