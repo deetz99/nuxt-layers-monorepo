@@ -1,5 +1,20 @@
 # @dwol/accounts-layer
 
+## 0.0.19
+
+### Patch Changes
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Update bg color in NewItem component
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Chore(release): enter rc version
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Update css file
+
+- [#107](https://github.com/deetz99/nuxt-layers-monorepo/pull/107) [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee) Thanks [@deetz99](https://github.com/deetz99)! - Overwrite NewItem Component in accounts layer
+
+- Updated dependencies [[`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee), [`64df6b9`](https://github.com/deetz99/nuxt-layers-monorepo/commit/64df6b940527b0713d1311c93c34d9b1c7993bee)]:
+  - @dwol/base-layer@0.0.17
+
 ## 0.0.19-rc.8
 
 ### Patch Changes
