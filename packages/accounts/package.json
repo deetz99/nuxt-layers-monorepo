@@ -1,7 +1,7 @@
 {
   "name": "@dwol/accounts-layer",
   "type": "module",
-  "version": "0.0.19-beta.3",
+  "version": "0.0.19-beta.4",
   "repository": "github:deetz99/nuxt-layers-monorepo",
   "main": "./nuxt.config.ts",
   "scripts": {
