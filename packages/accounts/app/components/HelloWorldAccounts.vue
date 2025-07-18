@@ -1,3 +1,10 @@
+<script setup lang="ts">
+defineProps({
+  test: { type: Boolean, required: false }
+})
+const weeble: Test = { bla: true }
+</script>
+
 <template>
   <HelloWorld />
   <div class="p-5 bg-yellow-100">
@@ -10,5 +17,7 @@
     <p class="text-bcGovColor-navDivider">
       Should be bcGovColor-navDivider accounts (defined in base css)
     </p>
+    {{ test }}
+    {{ weeble }}
   </div>
 </template>

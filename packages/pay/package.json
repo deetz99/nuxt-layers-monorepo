@@ -12,23 +12,25 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "typecheck": "npx nuxt typecheck"
   },
   "devDependencies": {
-    "nuxt": "catalog:",
-    "typescript": "catalog:",
-    "vue": "catalog:",
-    "@nuxtjs/i18n": "catalog:",
-    "@playwright/test": "catalog:",
     "@axe-core/playwright": "catalog:",
     "@faker-js/faker": "catalog:",
     "@nuxt/test-utils": "catalog:",
-    "vitest": "catalog:",
-    "@vitest/coverage-v8": "catalog:",
-    "happy-dom": "catalog:",
-    "otpauth": "catalog:",
+    "@nuxtjs/i18n": "catalog:",
+    "@playwright/test": "catalog:",
     "@testing-library/vue": "catalog:",
-    "@vue/test-utils": "catalog:"
+    "@vitest/coverage-v8": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "happy-dom": "catalog:",
+    "nuxt": "catalog:",
+    "otpauth": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "vue": "catalog:",
+    "vue-tsc": "catalog:"
   },
   "dependencies": {
     "@dwol/accounts-layer": "workspace:*"
