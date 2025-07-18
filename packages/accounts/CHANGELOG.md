@@ -1,5 +1,11 @@
 # @dwol/accounts-layer
 
+## 0.0.19-beta.7
+
+### Patch Changes
+
+- [#101](https://github.com/deetz99/nuxt-layers-monorepo/pull/101) [`85eec27`](https://github.com/deetz99/nuxt-layers-monorepo/commit/85eec278cf28cd3e5f7cefdebd26c5364e146121) Thanks [@deetz99](https://github.com/deetz99)! - Update css file
+
 ## 0.0.19-beta.6
 
 ### Patch Changes
