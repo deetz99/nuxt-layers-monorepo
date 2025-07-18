@@ -19,9 +19,10 @@ const deviceNames = [
 
 export default defineConfig<ConfigOptions>({
   globalSetup: './tests/e2e/setup',
+  maxFailures: process.env.CI ? 10 : undefined,
   testDir: './tests/e2e',
   testMatch: '*.spec.ts',
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   reporter: [['list'], [process.env.CI ? 'blob' : 'html']],
   use: {
     nuxt: {

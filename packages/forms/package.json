@@ -28,7 +28,8 @@
     "happy-dom": "catalog:",
     "otpauth": "catalog:",
     "@testing-library/vue": "catalog:",
-    "@vue/test-utils": "catalog:"
+    "@vue/test-utils": "catalog:",
+    "vue-tsc": "catalog:"
   },
   "dependencies": {
     "@dwol/base-layer": "workspace:*"
