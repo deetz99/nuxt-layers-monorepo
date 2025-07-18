@@ -1,5 +1,14 @@
 # @dwol/accounts-layer
 
+## 0.0.19-rc.8
+
+### Patch Changes
+
+- [#104](https://github.com/deetz99/nuxt-layers-monorepo/pull/104) [`d6d119d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/d6d119d640c5e9e732d8ab0e4e90aa3ef555d63f) Thanks [@deetz99](https://github.com/deetz99)! - Chore(release): enter rc version
+
+- Updated dependencies [[`d6d119d`](https://github.com/deetz99/nuxt-layers-monorepo/commit/d6d119d640c5e9e732d8ab0e4e90aa3ef555d63f)]:
+  - @dwol/base-layer@0.0.17-rc.5
+
 ## 0.0.19-beta.7
 
 ### Patch Changes

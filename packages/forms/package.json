@@ -1,7 +1,7 @@
 {
   "name": "@dwol/forms-layer",
   "type": "module",
-  "version": "0.0.17-beta.4",
+  "version": "0.0.17-rc.5",
   "repository": "github:deetz99/nuxt-layers-monorepo",
   "main": "./nuxt.config.ts",
   "scripts": {
