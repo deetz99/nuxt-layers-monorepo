@@ -1,5 +1,12 @@
 # pay-layer-demo-app
 
+## 0.0.15-beta.5
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @dwol/pay-layer@0.0.17-beta.5
+
 ## 0.0.15-beta.4
 
 ### Patch Changes
