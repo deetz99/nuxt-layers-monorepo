@@ -34,7 +34,16 @@ jobs:
         run: |
           echo "Workflow triggered by /e2e comment on PR #${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
 
-      # NEW: Get both head and base branch names in one reliable step.
+      # MODIFIED: Checkout must happen BEFORE any git-dependent commands like 'gh'.
+      - name: 'Checkout PR branch'
+        uses: actions/checkout@v4
+        with:
+          # We need a temporary ref here first, which we'll refine later.
+          # The main goal is to get the .git directory in place.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0 # Fetch the entire history for an accurate diff
+
+      # Get both head and base branch names in one reliable step.
       - name: 'Get PR Info'
         id: pr_info
         env:
@@ -45,14 +54,7 @@ jobs:
           echo "head_branch=$(echo $PR_DATA | jq -r .headRefName)" >> $GITHUB_OUTPUT
           echo "base_branch=$(echo $PR_DATA | jq -r .baseRefName)" >> $GITHUB_OUTPUT
 
-      # MODIFIED: Check out the head branch of the PR.
-      - name: 'Checkout PR branch'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ steps.pr_info.outputs.head_branch }}
-          fetch-depth: 0 # Fetch the entire history for an accurate diff
-
-      # MODIFIED: Explicitly tell the filter what to compare.
+      # Explicitly tell the filter what to compare.
       - name: 'Determine changed packages'
         uses: dorny/paths-filter@v3
         id: filter
@@ -69,7 +71,7 @@ jobs:
             pay:
               - 'packages/layers/pay/**'
 
-      # MODIFIED: Use the branch name from the 'Get PR Info' step.
+      # Use the branch name from the 'Get PR Info' step.
       - name: 'Trigger E2E workflows for changed packages'
         if: steps.filter.outputs.filters != '[]' # Only run if at least one package changed
         env:
