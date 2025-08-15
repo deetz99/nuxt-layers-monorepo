@@ -34,6 +34,10 @@ jobs:
         run: |
           echo "Workflow triggered by /e2e comment on PR #${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
 
+      # MODIFIED: Checkout must happen BEFORE any git-dependent commands like 'gh'.
+      - name: 'Checkout repository'
+        uses: actions/checkout@v4
+
       # Get PR info and a list of all changed files from the GitHub API.
       - name: 'Get PR changed files'
         id: pr_files
