@@ -32,11 +32,21 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: refs/pull/${{ github.event.issue.number }}/merge
+          fetch-depth: 0
+
+      - name: 'Get PR base branch'
+        id: get_base_branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          echo "name=$(gh pr view $PR_NUMBER --json baseRefName -q .baseRefName)" >> $GITHUB_OUTPUT
 
       - name: 'Determine changed packages'
         uses: dorny/paths-filter@v3
         id: filter
         with:
+          base: ${{ steps.get_base_branch.outputs.name }}
           filters: |
             base:
               - 'packages/base-ui/**'
