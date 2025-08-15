@@ -28,7 +28,9 @@ async function globalSetup() {
   const baseUrl = process.env.NUXT_BASE_URL!
   // make sure app is available
   const serverReady = await isServerReady(baseUrl)
+  console.info('TEST ENV KEY: ', process.env.NUXT_PUBLIC_TEST_KEY)
   if (!serverReady) {
+    console.info('TEST ENV KEY: ', process.env.NUXT_PUBLIC_TEST_KEY)
     throw new Error(`Server at ${baseUrl} did not become ready within the timeout period.`)
   }
 
