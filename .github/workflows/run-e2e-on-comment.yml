@@ -1,15 +1,21 @@
 name: 'Comment Trigger: E2E'
 
 on:
+  # This action triggers when a comment is created on a pull request
   issue_comment:
     types: [created]
 
+# Concurrency ensures that only one instance of this workflow runs per PR for the same comment trigger.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.issue.number }}
   cancel-in-progress: true
 
 jobs:
   trigger-e2e-workflows:
+    # This job only runs if:
+    # 1. The comment is on a PR.
+    # 2. The comment body contains "/e2e".
+    # 3. The commenter has write access to the repository (Owner, Member, or Collaborator).
     if: >-
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '/e2e') &&
@@ -20,59 +26,66 @@ jobs:
       )
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: read
-      actions: write
+      pull-requests: read # Required to read PR data
+      actions: write      # Required to trigger other workflows
 
     steps:
       - name: 'Log the trigger'
         run: |
-          echo "Workflow triggered by /e2e comment on PR ${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
+          echo "Workflow triggered by /e2e comment on PR #${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
 
-      - name: 'Checkout PR branch'
-        uses: actions/checkout@v4
-        with:
-          ref: refs/pull/${{ github.event.issue.number }}/merge
-          fetch-depth: 0
-
-      - name: 'Get PR base branch'
-        id: get_base_branch
+      # NEW: Get both head and base branch names in one reliable step.
+      - name: 'Get PR Info'
+        id: pr_info
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.issue.number }}
         run: |
-          echo "name=$(gh pr view $PR_NUMBER --json baseRefName -q .baseRefName)" >> $GITHUB_OUTPUT
+          PR_DATA=$(gh pr view $PR_NUMBER --json headRefName,baseRefName)
+          echo "head_branch=$(echo $PR_DATA | jq -r .headRefName)" >> $GITHUB_OUTPUT
+          echo "base_branch=$(echo $PR_DATA | jq -r .baseRefName)" >> $GITHUB_OUTPUT
 
+      # MODIFIED: Check out the head branch of the PR.
+      - name: 'Checkout PR branch'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pr_info.outputs.head_branch }}
+          fetch-depth: 0 # Fetch the entire history for an accurate diff
+
+      # MODIFIED: Explicitly tell the filter what to compare.
       - name: 'Determine changed packages'
         uses: dorny/paths-filter@v3
         id: filter
         with:
-          base: ${{ steps.get_base_branch.outputs.name }}
+          base: ${{ steps.pr_info.outputs.base_branch }}
+          head: ${{ steps.pr_info.outputs.head_branch }}
           filters: |
             base:
-              - 'packages/base-ui/**'
+              - 'packages/layers/base/**'
             auth:
-              - 'packages/accounts/**'
+              - 'packages/layers/auth/**'
             forms:
-              - 'packages/forms/**'
+              - 'packages/layers/forms/**'
             pay:
-              - 'packages/pay/**'
+              - 'packages/layers/pay/**'
 
+      # MODIFIED: Use the branch name from the 'Get PR Info' step.
       - name: 'Trigger E2E workflows for changed packages'
-        if: steps.filter.outputs.filters != '[]'
+        if: steps.filter.outputs.filters != '[]' # Only run if at least one package changed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_URL: ${{ github.event.issue.pull_request.url }}
+          PR_BRANCH: ${{ steps.pr_info.outputs.head_branch }}
           CHANGED_FILTERS: ${{ steps.filter.outputs.filters }}
         run: |
           echo "Changed packages: $CHANGED_FILTERS"
-          
-          PR_BRANCH=$(gh pr view $PR_URL --json headRefName -q .headRefName)
           echo "PR Branch: $PR_BRANCH"
 
+          # Use jq to parse the JSON array and loop through each changed package
           for pkg in $(echo "$CHANGED_FILTERS" | jq -r '.[]'); do
             workflow_name="e2e-${pkg}.yml"
-            echo "-> Triggering workflow: $workflow_name"
+            echo "-> Triggering workflow: $workflow_name for branch $PR_BRANCH"
             
+            # Use the GitHub CLI to trigger the specific workflow file for the package
             gh workflow run "$workflow_name" --ref "$PR_BRANCH" || echo "Warning: Workflow '$workflow_name' not found or failed to trigger."
           done
 
