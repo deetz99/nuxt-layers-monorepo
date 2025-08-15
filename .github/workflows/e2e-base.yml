@@ -42,7 +42,7 @@ jobs:
       env:
         HOME: "/root"
         CI: true
-        NUXT_PUBLIC_BASE_URL: "http://localhost:3000/"
+        NUXT_BASE_URL: "http://localhost:3000/"
         NUXT_PUBLIC_TEST_KEY: ${{ secrets.TEST_VALUE }}
 
     - name: Upload blob report to GitHub Actions Artifacts
