@@ -34,59 +34,63 @@ jobs:
         run: |
           echo "Workflow triggered by /e2e comment on PR #${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
 
-      # MODIFIED: Checkout must happen BEFORE any git-dependent commands like 'gh'.
-      - name: 'Checkout PR branch'
-        uses: actions/checkout@v4
-        with:
-          # This special ref checks out the state of the PR as if it were merged with the base branch.
-          ref: refs/pull/${{ github.event.issue.number }}/merge
-          fetch-depth: 0 # Fetch the entire history for an accurate diff
-
-      # Get both head and base branch names first. This step is crucial.
-      - name: 'Get PR Info'
-        id: pr_info
+      # Get PR info and a list of all changed files from the GitHub API.
+      - name: 'Get PR changed files'
+        id: pr_files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.issue.number }}
         run: |
-          PR_DATA=$(gh pr view $PR_NUMBER --json headRefName,baseRefName)
-          echo "head_branch=$(echo $PR_DATA | jq -r .headRefName)" >> $GITHUB_OUTPUT
-          echo "base_branch=$(echo $PR_DATA | jq -r .baseRefName)" >> $GITHUB_OUTPUT
+          PR_DATA=$(gh pr view $PR_NUMBER --json headRefName,files --jq '{headRefName, files: .files | map(.path)}')
+          echo "pr_branch=$(echo $PR_DATA | jq -r .headRefName)" >> $GITHUB_OUTPUT
+          echo "changed_files=$(echo $PR_DATA | jq -c .files)" >> $GITHUB_OUTPUT
 
-      # The filter now compares the checked-out HEAD against the correct base branch.
+      # Based on the file list, determine which packages have changed.
       - name: 'Determine changed packages'
-        uses: dorny/paths-filter@v3
         id: filter
-        with:
-          # The 'base' input tells the action which branch to compare against.
-          base: ${{ steps.pr_info.outputs.base_branch }}
-          filters: |
-            base:
-              - 'packages/layers/base/**'
-            auth:
-              - 'packages/layers/auth/**'
-            forms:
-              - 'packages/layers/forms/**'
-            pay:
-              - 'packages/layers/pay/**'
+        run: |
+          files='${{ steps.pr_files.outputs.changed_files }}'
+          declare -A changed_packages
 
-      # Use the branch name from the 'Get PR Info' step.
+          # Define your package paths here
+          # The key is the package name (e.g., 'auth') and the value is the path pattern.
+          declare -A package_paths=(
+            ["base"]="packages/layers/base/"
+            ["auth"]="packages/layers/auth/"
+            ["forms"]="packages/layers/forms/"
+            ["pay"]="packages/layers/pay/"
+          )
+
+          for file in $(echo "$files" | jq -r '.[]'); do
+            for pkg in "${!package_paths[@]}"; do
+              if [[ "$file" == "${package_paths[$pkg]}"* ]]; then
+                changed_packages["$pkg"]=1
+              fi
+            done
+          done
+          
+          if [ ${#changed_packages[@]} -eq 0 ]; then
+            echo "changed_filters=[]" >> $GITHUB_OUTPUT
+          else
+            # Output a JSON array of the changed package names
+            filters=$(printf '"%s",' "${!changed_packages[@]}" | sed 's/,$//')
+            echo "changed_filters=[$filters]" >> $GITHUB_OUTPUT
+          fi
+
+      # Use the filtered list to trigger the correct workflows.
       - name: 'Trigger E2E workflows for changed packages'
-        if: steps.filter.outputs.filters != '[]' # Only run if at least one package changed
+        if: steps.filter.outputs.changed_filters != '[]'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_BRANCH: ${{ steps.pr_info.outputs.head_branch }}
-          CHANGED_FILTERS: ${{ steps.filter.outputs.filters }}
+          PR_BRANCH: ${{ steps.pr_files.outputs.pr_branch }}
+          CHANGED_FILTERS: ${{ steps.filter.outputs.changed_filters }}
         run: |
           echo "Changed packages: $CHANGED_FILTERS"
           echo "PR Branch: $PR_BRANCH"
 
-          # Use jq to parse the JSON array and loop through each changed package
           for pkg in $(echo "$CHANGED_FILTERS" | jq -r '.[]'); do
             workflow_name="e2e-${pkg}.yml"
             echo "-> Triggering workflow: $workflow_name for branch $PR_BRANCH"
-            
-            # Use the GitHub CLI to trigger the specific workflow file for the package
             gh workflow run "$workflow_name" --ref "$PR_BRANCH" || echo "Warning: Workflow '$workflow_name' not found or failed to trigger."
           done
 
@@ -94,7 +98,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const changedPackages = JSON.parse('${{ steps.filter.outputs.filters }}');
+            const changedPackages = JSON.parse('${{ steps.filter.outputs.changed_filters }}');
             let body;
 
             if (changedPackages.length > 0) {
