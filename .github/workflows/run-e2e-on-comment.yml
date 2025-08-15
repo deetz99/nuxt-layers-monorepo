@@ -25,7 +25,8 @@ jobs:
 
     steps:
       - name: 'Log the trigger'
-        run: echo "Workflow triggered by /e2e comment on PR #${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
+        run: |
+          echo "Workflow triggered by /e2e comment on PR ${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
 
       - name: 'Checkout PR branch'
         uses: actions/checkout@v4
