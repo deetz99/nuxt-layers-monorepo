@@ -37,13 +37,12 @@ jobs:
       run: pnpm install
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
+    - name: Create .env file
+      run: |
+        echo "NUXT_BASE_URL=http://localhost:3000/" >> .env
+        echo "NUXT_PUBLIC_TEST_KEY=${{ secrets.TEST_VALUE }}" >> .env
     - name: Run Playwright tests
-      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-      env:
-        HOME: "/root"
-        CI: true
-        NUXT_BASE_URL: "http://localhost:3000/"
-        NUXT_PUBLIC_TEST_KEY: ${{ secrets.TEST_VALUE }}
+      run: HOME=/root pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
     - name: Upload blob report to GitHub Actions Artifacts
       if: ${{ !cancelled() }}
