@@ -32,6 +32,8 @@ async function globalSetup() {
     throw new Error(`Server at ${baseUrl} did not become ready within the timeout period.`)
   }
 
+  console.info('TEST ENV KEY: ', process.env.NUXT_PUBLIC_TEST_KEY)
+
   // launch browser and create page context
   const browser: Browser = await chromium.launch()
   const context = await browser.newContext()
