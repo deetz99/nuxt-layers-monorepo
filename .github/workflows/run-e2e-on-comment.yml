@@ -26,8 +26,9 @@ jobs:
       )
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: read # Required to read PR data
-      actions: write      # Required to trigger other workflows
+      pull-requests: read
+      pull-requests: write
+      actions: write
       issues: write
 
     steps:
