@@ -60,10 +60,10 @@ jobs:
           # Define your package paths here
           # The key is the package name (e.g., 'auth') and the value is the path pattern.
           declare -A package_paths=(
-            ["base"]="packages/layers/base-ui/"
-            ["auth"]="packages/layers/auth/"
-            ["forms"]="packages/layers/forms/"
-            ["pay"]="packages/layers/pay/"
+            ["base"]="packages/base-ui/"
+            ["auth"]="packages/accounts/"
+            ["forms"]="packages/forms/"
+            ["pay"]="packages/pay/"
           )
 
           for file in $(echo "$files" | jq -r '.[]'); do
