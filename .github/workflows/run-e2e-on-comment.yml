@@ -34,6 +34,14 @@ jobs:
         run: |
           echo "Workflow triggered by /e2e comment on PR #${{ github.event.issue.number }} by @${{ github.event.comment.user.login }}."
 
+      # MODIFIED: Checkout must happen BEFORE any git-dependent commands like 'gh'.
+      - name: 'Checkout PR branch'
+        uses: actions/checkout@v4
+        with:
+          # This special ref checks out the state of the PR as if it were merged with the base branch.
+          ref: refs/pull/${{ github.event.issue.number }}/merge
+          fetch-depth: 0 # Fetch the entire history for an accurate diff
+
       # Get both head and base branch names first. This step is crucial.
       - name: 'Get PR Info'
         id: pr_info
@@ -44,13 +52,6 @@ jobs:
           PR_DATA=$(gh pr view $PR_NUMBER --json headRefName,baseRefName)
           echo "head_branch=$(echo $PR_DATA | jq -r .headRefName)" >> $GITHUB_OUTPUT
           echo "base_branch=$(echo $PR_DATA | jq -r .baseRefName)" >> $GITHUB_OUTPUT
-
-      # Now that we have the branch name, check out the correct code from the PR.
-      - name: 'Checkout PR branch'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ steps.pr_info.outputs.head_branch }}
-          fetch-depth: 0 # Fetch the entire history for an accurate diff
 
       # The filter now compares the checked-out HEAD against the correct base branch.
       - name: 'Determine changed packages'
