@@ -38,8 +38,7 @@ jobs:
     - name: Set basic env with secrets
       run: |
         cp .env.example .env
-        echo "NUXT_PUBLIC_TEST_KEY=${{ secrets.TEST_VALUE }}" >> .env
-        # Add any other secrets you need on new lines here
+        sed -i 's|NUXT_PUBLIC_ADDRESS_COMPLETE_KEY=""|NUXT_PUBLIC_ADDRESS_COMPLETE_KEY="${{ secrets.CANADA_POST_KEY }}"|g' .env
 
     # This will now run in the correct context
     - name: Run Playwright tests
