@@ -10,7 +10,7 @@
     "prepare": "nuxt prepare .playground",
     "build": "nuxt build .playground",
     "build:test": "pnpm generate && npx serve .playground/.output/public",
-    "generate": "nuxt generate .playground",
+    "generate": "nuxt generate .playground --dotenv ../.env",
     "preview": "npx serve .playground/.output/public",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -19,7 +19,8 @@
     "test:e2e": "npx playwright test"
   },
   "dependencies": {
-    "@nuxt/ui": "^3.2.0"
+    "@nuxt/ui": "^3.2.0",
+    "@sbc-connect/nuxt-forms": "^0.1.12"
   },
   "devDependencies": {
     "@dwol/playwright-config": "workspace:*",

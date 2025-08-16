@@ -7,6 +7,10 @@ export default defineNuxtConfig({
 
   devtools: { enabled: false },
 
+  extends: [
+    '@sbc-connect/nuxt-forms'
+  ],
+
   modules: ['@nuxt/ui'],
 
   alias: {
