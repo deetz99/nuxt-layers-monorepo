@@ -19,7 +19,8 @@
     "test:e2e": "npx playwright test"
   },
   "dependencies": {
-    "@nuxt/ui": "^3.2.0"
+    "@nuxt/ui": "^3.2.0",
+    "@sbc-connect/nuxt-forms": "^0.1.12"
   },
   "devDependencies": {
     "@dwol/playwright-config": "workspace:*",
