@@ -7,7 +7,6 @@ jobs:
         project: ["base-ui"]
         shardIndex: [1, 2, 3, 4]
         shardTotal: [4]
-    # DEFAULTS BLOCK REMOVED FROM HERE
     env:
       CI: true
     container:
@@ -23,22 +22,19 @@ jobs:
         node-version: 24
         cache: 'pnpm'
 
-    # This now runs from the repository root, as intended
+    # This runs from the repository root, which is correct.
     - name: Install dependencies
       run: pnpm install
 
-    # This step needs the working directory
     - name: Install Playwright browsers
       working-directory: ./packages/${{ matrix.project }}
       run: npx playwright install --with-deps
 
-    # This step needs the working directory
+    # MODIFIED: Copy the .env.example from the package to the root .env file
     - name: Set basic env
-      working-directory: ./packages/${{ matrix.project }}
       run: |
-        cp .env.example .env
+        cp ./packages/${{ matrix.project }}/.env.example ./.env
 
-    # This step needs the working directory
     - name: Run Playwright tests
       working-directory: ./packages/${{ matrix.project }}
       run: HOME=/root pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
