@@ -7,6 +7,11 @@ jobs:
         project: ["base-ui"]
         shardIndex: [1, 2, 3, 4]
         shardTotal: [4]
+
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
+
     env:
       CI: true
     container:
@@ -22,19 +27,20 @@ jobs:
         node-version: 24
         cache: 'pnpm'
 
-    # This runs from the repository root, which is correct.
+    # This will now run inside the package directory, just like your working CI
     - name: Install dependencies
       run: pnpm install
 
     - name: Install Playwright browsers
-      working-directory: ./packages/${{ matrix.project }}
       run: npx playwright install --with-deps
 
-    # MODIFIED: Copy the .env.example from the package to the root .env file
-    - name: Set basic env
+    # MODIFIED: Copy the example file, then append the secrets to it
+    - name: Set basic env with secrets
       run: |
-        cp ./packages/${{ matrix.project }}/.env.example ./.env
+        cp .env.example .env
+        echo "NUXT_PUBLIC_TEST_KEY=${{ secrets.TEST_VALUE }}" >> .env
+        # Add any other secrets you need on new lines here
 
+    # This will now run in the correct context
     - name: Run Playwright tests
-      working-directory: ./packages/${{ matrix.project }}
-      run: HOME=/root pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
