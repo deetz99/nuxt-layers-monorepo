@@ -25,7 +25,7 @@ async function isServerReady(url: string, timeout: number = 30000): Promise<bool
 
 async function globalSetup() {
   console.info('Test setup starting...')
-  const baseUrl = process.env.NUXT_BASE_URL!
+  const baseUrl = 'http://localhost:3000/' // process.env.NUXT_BASE_URL!
   // make sure app is available
   const serverReady = await isServerReady(baseUrl)
   console.info('TEST ENV KEY: ', process.env.NUXT_PUBLIC_TEST_KEY)
