@@ -37,10 +37,9 @@ jobs:
       run: pnpm install
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
-    - name: Create .env file
+    - name: Set basic env
       run: |
-        echo "NUXT_BASE_URL=http://localhost:3000/" >> .env
-        echo "NUXT_PUBLIC_TEST_KEY=${{ secrets.TEST_VALUE }}" >> .env
+        cp .env.example .env
     - name: Run Playwright tests
       run: HOME=/root pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
