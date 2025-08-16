@@ -30,13 +30,13 @@ test.describe('ConnectFormAddress', () => {
     await page.waitForURL('*/**/examples/components/ConnectFormAddress')
 
     // get default example
-    const defaultContainer = page.getByTestId('default')
+    const defaultContainer = page.getByTestId('default-container')
 
     // enter Vancouver Art Gallery for lookup address
     const lookupAddress = '750 Hornby St'
 
     // .fill does not trigger address complete
-    await defaultContainer.getByTestId('default-street').pressSequentially(lookupAddress, { delay: 100 })
+    await defaultContainer.getByTestId('default-input-street').pressSequentially(lookupAddress, { delay: 100 })
 
     // list of options should be displayed
     await expect(page.getByRole('listbox')).toBeVisible({ timeout: 5000 })
@@ -45,10 +45,10 @@ test.describe('ConnectFormAddress', () => {
     await page.getByRole('option', { name: lookupAddress }).click()
 
     // assert fields are populated after selection
-    await expect(page.getByTestId('default-street')).toHaveValue(lookupAddress)
-    await expect(page.getByTestId('default-city')).toHaveValue('Vancouver')
-    await expect(page.getByTestId('default-region')).toContainText('British Columbia')
-    await expect(page.getByTestId('default-postalCode')).toHaveValue('V6Z 2H7')
+    await expect(page.getByTestId('default-input-street')).toHaveValue(lookupAddress)
+    await expect(page.getByTestId('default-input-city')).toHaveValue('Vancouver')
+    await expect(page.getByTestId('default-input-region')).toContainText('British Columbia')
+    await expect(page.getByTestId('default-input-postalCode')).toHaveValue('V6Z 2H7')
   })
 
   // TODO: get secrets working in CI
