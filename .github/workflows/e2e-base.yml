@@ -84,4 +84,4 @@ jobs:
       with:
         name: html-report--attempt-${{ github.run_attempt }}
         path: packages/${{ matrix.project }}/playwright-report
-        retention-days: 2
+        retention-days: 2 
