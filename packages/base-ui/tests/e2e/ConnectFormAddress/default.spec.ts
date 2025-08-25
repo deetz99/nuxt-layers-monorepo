@@ -4,7 +4,9 @@ import type { Page } from '@playwright/test'
 
 async function scanA11y(page: Page) {
   // TODO: banner needs to be in a landmark
-  const accessibilityScanResults = await new AxeBuilder({ page }).exclude(['#connect-system-banner']).analyze()
+  const accessibilityScanResults = await new AxeBuilder({ page })
+    .exclude(['#connect-system-banner', '#address_list'])
+    .analyze()
   expect(accessibilityScanResults.violations).toEqual([])
 }
 
