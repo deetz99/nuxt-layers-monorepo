@@ -33,13 +33,49 @@ jobs:
 
     - name: Install Playwright browsers
       run: npx playwright install --with-deps
-
-    # MODIFIED: Copy the example file, then append the secrets to it
-    - name: Set basic env with secrets
-      run: |
-        cp .env.example .env
-        sed -i 's|NUXT_PUBLIC_ADDRESS_COMPLETE_KEY=""|NUXT_PUBLIC_ADDRESS_COMPLETE_KEY="${{ secrets.CANADA_POST_KEY }}"|g' .env
-
-    # This will now run in the correct context
     - name: Run Playwright tests
       run: pnpm test:e2e --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      env:
+        HOME: "/root"
+        CI: true
+        NUXT_PUBLIC_BASE_URL: "http://localhost:3000/"
+        NUXT_PUBLIC_ADDRESS_COMPLETE_KEY: ${{ secrets.CANADA_POST_KEY }}
+
+    - name: Upload blob report to GitHub Actions Artifacts
+      if: ${{ !cancelled() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: blob-report-${{ matrix.shardIndex }}
+        path: packages/${{ matrix.project }}/blob-report
+        retention-days: 1
+
+  merge-reports:
+    if: ${{ !cancelled() }}
+    needs: [e2e-tests]
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ["base-ui"]
+    defaults:
+      run:
+        working-directory: ./packages/${{ matrix.project }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Download blob reports from GitHub Actions Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: packages/${{ matrix.project }}/all-blob-reports
+        pattern: blob-report-*
+        merge-multiple: true
+        - name: Merge into HTML Report
+      run: npx playwright merge-reports --reporter html ./all-blob-reports
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v4
+      with:
+        name: html-report--attempt-${{ github.run_attempt }}
+        path: packages/${{ matrix.project }}/playwright-report
+        retention-days: 2
