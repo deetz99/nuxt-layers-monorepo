@@ -19,6 +19,7 @@ test.describe('ConnectFormAddress', () => {
   test.afterEach(async ({ page }) => {
     // wait for page to render fully before scanning
     await expect(page.getByRole('heading').first()).toBeVisible()
+    await expect(page.getByRole('listbox')).not.toBeVisible()
     await scanA11y(page)
   })
 
