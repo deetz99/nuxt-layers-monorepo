@@ -43,7 +43,7 @@ jobs:
         HOME: "/root"
         CI: true
         NUXT_PUBLIC_BASE_URL: "http://localhost:3000/"
-        NUXT_PUBLIC_TEST_KEY: ${{ secrets.TEST_VALUE }}
+        NUXT_PUBLIC_ADDRESS_COMPLETE_KEY: ${{ secrets.CANADA_POST_KEY }}
 
     - name: Upload blob report to GitHub Actions Artifacts
       if: ${{ !cancelled() }}
