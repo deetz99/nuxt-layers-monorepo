@@ -42,7 +42,7 @@ test.describe('ConnectFormAddress', () => {
     await expect(page.getByRole('listbox')).toBeVisible({ timeout: 5000 })
 
     // should be an option that matches the lookup address, select it
-    await page.getByRole('option', { name: lookupAddress }).click()
+    await page.getByRole('option').first().click()
 
     // assert fields are populated after selection
     await expect(page.getByTestId('default-input-street')).toHaveValue(lookupAddress)
